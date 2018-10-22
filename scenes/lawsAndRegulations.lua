@@ -1,7 +1,6 @@
 -----------------------------------------------------------------------------------------
 --
--- sos.lua
--- created by Ashley Thorne-Jeffrey and Lynette Lowe
+-- Laws and Bylaws_scene.lua
 --
 -----------------------------------------------------------------------------------------
 
@@ -14,16 +13,8 @@ local scene = composer.newScene()
 -- the scene is removed entirely (not recycled) via "composer.removeScene()"
 -- -----------------------------------------------------------------------------------
  
-function callSOS()
-    -- hides the overlay with a fade effect lasting 400ms
-    composer.hideOverlay( "fade", 400 )
-    -- opens the devices phone with the number "000" ready to dial
-    system.openURL("tel:000")
-end
-
-function closeOverlay()
-    -- hides the overlay with a fade effect lasting 400ms
-    composer.hideOverlay( "fade", 400 )
+local function gotoIntro()
+    composer.gotoScene( "scenes.intro" )
 end
 
 -- -------------------------------------------------------------------------------------
@@ -36,23 +27,19 @@ function scene:create( event )
     local sceneGroup = self.view
     -- Code here runs when the scene is first created but has not yet appeared on screen
 
-    local optionsBox = display.newRect( sceneGroup, display.contentCenterX, display.contentCenterY, 240, 150 )
-    optionsBox:setFillColor(0)
+    local background = display.newImageRect( sceneGroup, "/assets/newaustralia.png", 320, 480 )
+    background.x = display.contentCenterX
+    background.y = display.contentCenterY
 
-    local sosConfirmation = display.newImageRect( sceneGroup, "/assets/sosConfirmation.png" , 240, 90 )
-    sosConfirmation.x = display.contentCenterX
-    sosConfirmation.y = display.contentCenterY - 35
+    local title = display.newImageRect( sceneGroup, "/assets/title.png" , 150, 60 )
+    title.x = display.contentCenterX
+    title.y = 10
+    
+    local backButton = display.newImageRect( sceneGroup, "/assets/back.png", 150, 60 )
+    backButton.x = display.contentCenterX
+    backButton.y = 468
 
-    local sosYes = display.newImageRect( sceneGroup, "/assets/yes.png" , 120, 90 )
-    sosYes.x = display.contentCenterX - 60
-    sosYes.y = display.contentCenterY + 30
-
-    local sosNo = display.newImageRect( sceneGroup, "/assets/no.png" , 120, 90 )
-    sosNo.x = display.contentCenterX + 60
-    sosNo.y = display.contentCenterY + 30
-
-    sosYes:addEventListener( "tap", callSOS)
-    sosNo:addEventListener( "tap", closeOverlay)
+    backButton:addEventListener( "tap", gotoIntro)
 
 end
  

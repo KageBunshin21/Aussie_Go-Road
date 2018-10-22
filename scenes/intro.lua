@@ -1,6 +1,7 @@
 -----------------------------------------------------------------------------------------
 --
 -- intro.lua
+-- created by Ashley Thorne-Jeffrey and Lynette Lowe
 --
 -----------------------------------------------------------------------------------------
 
@@ -60,12 +61,22 @@ local function gotoWarning()
 	composer.gotoScene("scenes.warnings")
 end
 
+-- specifies that the overlay is a modal (the parent scene cannot be interacted with)
+-- also dictates that when closed/opened, the overlay will take 400ms
+local overlayOptions = {
+	isModal = true,
+	effect = "fade",
+	time = 400
+}
+
 local function gotoSOS()
-	composer.gotoScene("scenes.sos")	
+	-- opens the sos confirmation overlay
+	composer.showOverlay ("scenes.sos", overlayOptions)	
 end
 
 local function gotoExit()
-	composer.gotoScene("scenes.exit")	
+	-- opens the exit confirmation overlay
+	composer.showOverlay ("scenes.exit", overlayOptions)
 end
 
 -----ERRROOORRRR
