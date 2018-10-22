@@ -36,7 +36,7 @@ Step 4. Click on the destination to be taken to the plan my route screen for tha
 3.2. Calling emergency services
 ---------------------------------------------------------------------------------------------------
 Step 1. From the main screen, click on the SOS button in the bottom left corner of the screen.
-Step 2. Click "yes" when prompted with a message that asks "are you sure?".
+Step 2. Click "yes" when prompted with a message that asks if you are sure.
 Step 3. Your phone will now attempt to dial 000.
 
 ---------------------------------------------------------------------------------------------------
@@ -74,7 +74,7 @@ Step 2. View all active warnings.
 3.8. Closing the app
 ---------------------------------------------------------------------------------------------------
 Step 1. From the main screen, click on the "exit" button in the bottom right corner of the screen.
-Step 2. Click "yes" when prompted with a message that says "are you sure?".
+Step 2. Click "yes" when prompted with a message that asks if you are sure.
 Step 3. The app will now close.
 
 ---------------------------------------------------------------------------------------------------

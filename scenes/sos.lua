@@ -39,15 +39,15 @@ function scene:create( event )
     local optionsBox = display.newRect( sceneGroup, display.contentCenterX, display.contentCenterY, 240, 150 )
     optionsBox:setFillColor(0)
 
-    local sosConfirmation = display.newImageRect( sceneGroup, "/assets/sosConfirmation.png" , 240, 90 )
+    local sosConfirmation = display.newImageRect( sceneGroup, "assets/sosConfirmation.png" , 240, 90 )
     sosConfirmation.x = display.contentCenterX
     sosConfirmation.y = display.contentCenterY - 35
 
-    local sosYes = display.newImageRect( sceneGroup, "/assets/yes.png" , 120, 90 )
+    local sosYes = display.newImageRect( sceneGroup, "assets/yes.png" , 120, 90 )
     sosYes.x = display.contentCenterX - 60
     sosYes.y = display.contentCenterY + 30
 
-    local sosNo = display.newImageRect( sceneGroup, "/assets/no.png" , 120, 90 )
+    local sosNo = display.newImageRect( sceneGroup, "assets/no.png" , 120, 90 )
     sosNo.x = display.contentCenterX + 60
     sosNo.y = display.contentCenterY + 30
 

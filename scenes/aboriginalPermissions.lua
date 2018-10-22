@@ -27,15 +27,15 @@ function scene:create( event )
 	local sceneGroup = self.view
 	-- Code here runs when the scene is first created but has not yet appeared on screen
 
-	local background = display.newImageRect( sceneGroup, "/assets/newaustralia.png", 320, 480 )
+	local background = display.newImageRect( sceneGroup, "assets/newaustralia.png", 320, 480 )
     background.x = display.contentCenterX
     background.y = display.contentCenterY
 
-    local title = display.newImageRect( sceneGroup, "/assets/title.png" , 150, 60 )
+    local title = display.newImageRect( sceneGroup, "assets/title.png" , 150, 60 )
     title.x = display.contentCenterX
     title.y = 10
     
-    local backButton = display.newImageRect( sceneGroup, "/assets/back.png", 150, 60 )
+    local backButton = display.newImageRect( sceneGroup, "assets/back.png", 150, 60 )
     backButton.x = display.contentCenterX
     backButton.y = 468
 

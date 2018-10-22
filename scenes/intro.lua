@@ -91,11 +91,11 @@ function scene:create( event )
 	local sceneGroup = self.view
 	-- Code here runs when the scene is first created but has not yet appeared on screen
 
-	local background = display.newImageRect( sceneGroup, "/assets/newaustralia.png", 320, 480 )
+	local background = display.newImageRect( sceneGroup, "assets/newaustralia.png", 320, 480 )
 	background.x = display.contentCenterX
 	background.y = display.contentCenterY
 
-	local title = display.newImageRect( sceneGroup, "/assets/title.png" , 150, 60 )
+	local title = display.newImageRect( sceneGroup, "assets/title.png" , 150, 60 )
 	title.x = display.contentCenterX
 	title.y = 10
 	
@@ -103,27 +103,27 @@ function scene:create( event )
 -- Buttons
 -- -------------------------------------------------------------------------------------	
 	
-	local SearchButton = display.newImageRect( sceneGroup, "/assets/search.png", 65, 65 )
+	local SearchButton = display.newImageRect( sceneGroup, "assets/search.png", 65, 65 )
 	SearchButton.x = 40
 	SearchButton.y = 10
 	
-	local GPSButton = display.newImageRect( sceneGroup, "/assets/gps.png", 65, 65 )
+	local GPSButton = display.newImageRect( sceneGroup, "assets/gps.png", 65, 65 )
 	GPSButton.x = 280
 	GPSButton.y = 10
 
-	local WarningButton = display.newImageRect( sceneGroup, "/assets/warning.png", 90, 90 )
+	local WarningButton = display.newImageRect( sceneGroup, "assets/warning.png", 90, 90 )
 	WarningButton.x = 55
 	WarningButton.y = 365
 
-	local menuButton = display.newImageRect( sceneGroup, "/assets/mainMenu.png", 150, 60 )
+	local menuButton = display.newImageRect( sceneGroup, "assets/mainMenu.png", 150, 60 )
 	menuButton.x = display.contentCenterX
 	menuButton.y = 468
 	
-	local SOSButton = display.newImageRect( sceneGroup, "/assets/SOS.png", 65, 65 )
+	local SOSButton = display.newImageRect( sceneGroup, "assets/SOS.png", 65, 65 )
 	SOSButton.x = 40
 	SOSButton.y = 470
 	
-	local ExitButton = display.newImageRect( sceneGroup, "/assets/exit.png", 65, 65 )
+	local ExitButton = display.newImageRect( sceneGroup, "assets/exit.png", 65, 65 )
 	ExitButton.x = 280
 	ExitButton.y = 470
 	

@@ -40,15 +40,15 @@ function scene:create( event )
     local optionsBox = display.newRect( sceneGroup, display.contentCenterX, display.contentCenterY, 240, 150 )
     optionsBox:setFillColor(0)
 
-    local exitConfirmation = display.newImageRect( sceneGroup, "/assets/exitConfirmation.png" , 240, 90 )
+    local exitConfirmation = display.newImageRect( sceneGroup, "assets/exitConfirmation.png" , 240, 90 )
     exitConfirmation.x = display.contentCenterX
     exitConfirmation.y = display.contentCenterY - 35
 
-    local exitYes = display.newImageRect( sceneGroup, "/assets/yes.png" , 120, 90 )
+    local exitYes = display.newImageRect( sceneGroup, "assets/yes.png" , 120, 90 )
     exitYes.x = display.contentCenterX - 60
     exitYes.y = display.contentCenterY + 30
 
-    local exitNo = display.newImageRect( sceneGroup, "/assets/no.png" , 120, 90 )
+    local exitNo = display.newImageRect( sceneGroup, "assets/no.png" , 120, 90 )
     exitNo.x = display.contentCenterX + 60
     exitNo.y = display.contentCenterY + 30
 

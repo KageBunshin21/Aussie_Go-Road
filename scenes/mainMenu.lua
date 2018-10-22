@@ -44,27 +44,27 @@ function scene:create( event )
     local sceneGroup = self.view
     -- Code here runs when the scene is first created but has not yet appeared on screen
 
-    local title = display.newImageRect( sceneGroup, "/assets/title.png" , 150, 60 )
+    local title = display.newImageRect( sceneGroup, "assets/title.png" , 150, 60 )
     title.x = display.contentCenterX
     title.y = 10
 
-    local menuButton1 = display.newImageRect( sceneGroup, "/assets/reportincidents.png", 320, 75 )
+    local menuButton1 = display.newImageRect( sceneGroup, "assets/reportincidents.png", 320, 75 )
     menuButton1.x = display.contentCenterX
     menuButton1.y = 125
 
-    local menuButton2 = display.newImageRect( sceneGroup, "/assets/planmyroute.png", 320, 75 )
+    local menuButton2 = display.newImageRect( sceneGroup, "assets/planmyroute.png", 320, 75 )
     menuButton2.x = display.contentCenterX
     menuButton2.y = 200
 
-    local menuButton3 = display.newImageRect( sceneGroup, "/assets/aboriginalpermissions.png", 320, 75 )
+    local menuButton3 = display.newImageRect( sceneGroup, "assets/aboriginalpermissions.png", 320, 75 )
     menuButton3.x = display.contentCenterX
     menuButton3.y = 275
 
-    local menuButton4 = display.newImageRect( sceneGroup, "/assets/about.png", 320, 75 )
+    local menuButton4 = display.newImageRect( sceneGroup, "assets/about.png", 320, 75 )
     menuButton4.x = display.contentCenterX
     menuButton4.y = 350    
     
-    local backButton = display.newImageRect( sceneGroup, "/assets/back.png", 150, 60 )
+    local backButton = display.newImageRect( sceneGroup, "assets/back.png", 150, 60 )
     backButton.x = display.contentCenterX
     backButton.y = 468
     
