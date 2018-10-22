@@ -36,7 +36,8 @@ function scene:create( event )
     local sceneGroup = self.view
     -- Code here runs when the scene is first created but has not yet appeared on screen
 
-    local optionsBox = display.newRect( sceneGroup, display.contentCenterX, display.contentCenterY, 240, 150 )
+    local optionsBox = display.newRect( display.contentCenterX, display.contentCenterY, 240, 150 )
+    sceneGroup:insert( optionsBox )
     optionsBox:setFillColor(0)
 
     local sosConfirmation = display.newImageRect( sceneGroup, "assets/sosConfirmation.png" , 240, 90 )
