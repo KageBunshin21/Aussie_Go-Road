@@ -1,6 +1,6 @@
 -----------------------------------------------------------------------------------------
 --
--- sos.lua
+-- gps.lua
 -- created by Ashley Thorne-Jeffrey and Lynette Lowe
 --
 -----------------------------------------------------------------------------------------
@@ -14,12 +14,6 @@ local scene = composer.newScene()
 -- the scene is removed entirely (not recycled) via "composer.removeScene()"
 -- -----------------------------------------------------------------------------------
  
-function callSOS()
-    -- hides the overlay with a fade effect lasting 400ms
-    composer.hideOverlay( "fade", 400 )
-    -- opens the devices phone with the number "000" ready to dial
-    system.openURL("tel:000")
-end
 
 function closeOverlay()
     -- hides the overlay with a fade effect lasting 400ms
@@ -40,20 +34,15 @@ function scene:create( event )
     sceneGroup:insert( optionsBox )
     optionsBox:setFillColor(0)
 
-    local sosConfirmation = display.newImageRect( sceneGroup, "assets/sosconfirmation.png" , 240, 90 )
-    sosConfirmation.x = display.contentCenterX
-    sosConfirmation.y = display.contentCenterY - 35
+    local gpsMessage = display.newImageRect( sceneGroup, "assets/gpsmessage.png" , 240, 90 )
+    gpsMessage.x = display.contentCenterX
+    gpsMessage.y = display.contentCenterY - 35
 
-    local sosYes = display.newImageRect( sceneGroup, "assets/yes.png" , 120, 90 )
-    sosYes.x = display.contentCenterX - 60
-    sosYes.y = display.contentCenterY + 30
+    local okayButton = display.newImageRect( sceneGroup, "assets/okay.png" , 120, 90 )
+    okayButton.x = display.contentCenterX
+    okayButton.y = display.contentCenterY + 30
 
-    local sosNo = display.newImageRect( sceneGroup, "assets/no.png" , 120, 90 )
-    sosNo.x = display.contentCenterX + 60
-    sosNo.y = display.contentCenterY + 30
-
-    sosYes:addEventListener( "tap", callSOS)
-    sosNo:addEventListener( "tap", closeOverlay)
+    okayButton:addEventListener( "tap", closeOverlay)
 
 end
  

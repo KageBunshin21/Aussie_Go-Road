@@ -41,7 +41,7 @@ function scene:create( event )
     sceneGroup:insert( optionsBox )
     optionsBox:setFillColor(0)
 
-    local exitConfirmation = display.newImageRect( sceneGroup, "assets/exitConfirmation.png" , 240, 90 )
+    local exitConfirmation = display.newImageRect( sceneGroup, "assets/exitconfirmation.png" , 240, 90 )
     exitConfirmation.x = display.contentCenterX
     exitConfirmation.y = display.contentCenterY - 35
 

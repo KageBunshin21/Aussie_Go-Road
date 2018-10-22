@@ -20,12 +20,19 @@ Step 2: Install the Aussie Go-Road app to your device.
 Step 3: Open the Aussie Go-Road app.
 
 ---------------------------------------------------------------------------------------------------
-3. Using the Aussie Go-Road app
+3. App Requirements
+---------------------------------------------------------------------------------------------------
+In order to use the Aussie Go-Road application, you must give the app these permissions:
+--- Permission to make phone calls (for emergency services)
+--- Permission to access Internet (to display laws & regulations, tips & tricks, etc)
+
+---------------------------------------------------------------------------------------------------
+4. Using the Aussie Go-Road app
 ---------------------------------------------------------------------------------------------------
 The Aussie Go-Road app has many amazing features, which will be explained in-depth below.
 
 ---------------------------------------------------------------------------------------------------
-3.1. Searching for a destination
+4.1. Searching for a destination
 ---------------------------------------------------------------------------------------------------
 Step 1. From the main screen, click on the search button in the top left corner of the screen.
 Step 2. Once the search bar appears, search for a destination.
@@ -33,52 +40,52 @@ Step 3. If the destintation is found, it will appear in the search results.
 Step 4. Click on the destination to be taken to the plan my route screen for that destination.
 
 ---------------------------------------------------------------------------------------------------
-3.2. Calling emergency services
+4.2. Calling emergency services
 ---------------------------------------------------------------------------------------------------
 Step 1. From the main screen, click on the SOS button in the bottom left corner of the screen.
 Step 2. Click "yes" when prompted with a message that asks if you are sure.
 Step 3. Your phone will now attempt to dial 000.
 
 ---------------------------------------------------------------------------------------------------
-3.3. Planning your route
+4.3. Planning your route
 ---------------------------------------------------------------------------------------------------
 Step 1. From the main screen, click on the menu button in the bottom middle part of the screen.
 Step 2. From the menu, click on the "plan my route" button.
 
 ---------------------------------------------------------------------------------------------------
-3.4. Reporting an incident
+4.4. Reporting an incident
 ---------------------------------------------------------------------------------------------------
 Step 1. From the main screen, click on the menu button in the bottom middle part of the screen.
 Step 2. From the menu, click on the "report incidents" button.
 
 ---------------------------------------------------------------------------------------------------
-3.5. Viewing the aboriginal permissions
+4.5. Viewing the aboriginal permissions
 ---------------------------------------------------------------------------------------------------
 Step 1. From the main screen, click on the menu button in the bottom middle part of the screen.
 Step 2. From the menu, click on the "aboriginal permissions" button.
 
 ---------------------------------------------------------------------------------------------------
-3.6. Learning about the Aussie Go-Road app
+4.6. Learning about the Aussie Go-Road app
 ---------------------------------------------------------------------------------------------------
 Step 1. From the main screen, click on the menu button in the bottom middle part of the screen.
 Step 2. From the menu, click on the "about" button.
 Step 3. Learn all about this amazing app!
 
 ---------------------------------------------------------------------------------------------------
-3.7. Viewing important warnings
+4.7. Viewing important warnings
 ---------------------------------------------------------------------------------------------------
 Step 1. From the main screen, click on the "warnings" button above the "sos" button.
 Step 2. View all active warnings.
 
 ---------------------------------------------------------------------------------------------------
-3.8. Closing the app
+4.8. Closing the app
 ---------------------------------------------------------------------------------------------------
 Step 1. From the main screen, click on the "exit" button in the bottom right corner of the screen.
 Step 2. Click "yes" when prompted with a message that asks if you are sure.
 Step 3. The app will now close.
 
 ---------------------------------------------------------------------------------------------------
-4. Frequently Asked Questions
+5. Frequently Asked Questions
 ---------------------------------------------------------------------------------------------------
 Q. How many locations are included in the Aussie Go-Road app?
 A. At the moment, the app includes information on ___ different locations. In future updates of the

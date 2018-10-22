@@ -21,12 +21,6 @@ local function gotoSearch()
 	composer.gotoScene("scenes.search")
 end
 
-local function gotoGPS()
-	--GPS functionality should be added here
-	--the pop up for the GPS coordinates should go in show scene
-	composer.gotoScene("scenes.gps")
-end
-
 local function gotoMainMenu()
 	composer.gotoScene("scenes.mainMenu")
 end
@@ -79,6 +73,12 @@ local function gotoExit()
 	composer.showOverlay ("scenes.exit", overlayOptions)
 end
 
+local function gotoGPS()
+	--GPS functionality should be added here
+	--the pop up for the GPS coordinates should go in show scene
+	composer.showOverlay ("scenes.gps", overlayOptions)
+end
+
 -----ERRROOORRRR
 
 -- -------------------------------------------------------------------------------------
@@ -115,7 +115,7 @@ function scene:create( event )
 	WarningButton.x = 55
 	WarningButton.y = 365
 
-	local menuButton = display.newImageRect( sceneGroup, "assets/mainMenu.png", 150, 60 )
+	local menuButton = display.newImageRect( sceneGroup, "assets/mainmenu.png", 150, 60 )
 	menuButton.x = display.contentCenterX
 	menuButton.y = 468
 	
