@@ -13,46 +13,48 @@ display.setStatusBar( display.HiddenStatusBar )
 math.randomseed( os.time() )
 
 -- Go to the intro screen
-composer.gotoScene( "Intro18" )
+composer.gotoScene("scenes.intro" )
  
 -- Go to the menu screen
---composer.gotoScene( "menu18" )
+--composer.gotoScene("scenes.mainMenu")
 
 -- Go to the Update screen
---composer.gotoScene( "Update" )
+--composer.gotoScene("scenes.update")
 --notification
+--doesn't exist!
 
 -- Go to the Warnings screen
---composer.gotoScene( "Warnings" 
+--composer.gotoScene("scenes.warnings") 
 
 -- Go to the Report Incident screen
---composer.gotoScene( "Report Incident" )
+--composer.gotoScene("scenes.reportIncident")
 
 -- Go to the Search Bar screen
---composer.gotoScene( "Search Bar" )
+--composer.gotoScene("scenes.searchBar")
+--doesn't exist!
 
 -- Go to the Plan My Route screen
---composer.gotoScene( "Plan My Route" )
+--composer.gotoScene("scenes.planMyRoute")
 
 -- Go to the Tips and Tricks screen
---composer.gotoScene( "Tips and Tricks" )
+--composer.gotoScene("scenes.tipsAndTricks")
 
 -- Go to the Interesting Facts screen
---composer.gotoScene( "Interesting Facts" )
+--composer.gotoScene("scenes.interestingFacts")
 
 -- Go to the Laws and Bylaws screen
---composer.gotoScene( "Laws and Bylaws" )
+--composer.gotoScene("scenes.lawsAndBylaws")
 
 -- Go to the Rules and regulations screen
---composer.gotoScene( "Rules and regulations" )
+--composer.gotoScene("scenes.rulesAndRegulations")
 --link to permissions
 
 -- Go to the GPS screen
---composer.gotoScene( "GPS" )
+--composer.gotoScene("scenes.gps")
 
 -- Go to the SOS button screen
---composer.gotoScene( "SOS button" )
+--composer.gotoScene("scenes.sos")
 
 -- Go to the Exit screen
---composer.gotoScene( "Exit" )
+--composer.gotoScene("scenes.exit")
 ------------------------------------------------------------------------------------------
