@@ -53,8 +53,8 @@ function scene:create( event )
             top = 70,
             width = display.contentWidth,
             height = 350,
-            topPadding = 20,
-            bottomPadding = 0,
+            topPadding = 220,
+            bottomPadding = -200,
             horizontalScrollDisable = true,
             verticalScrollDisable = false,
             listener = scrollListener,
@@ -63,34 +63,32 @@ function scene:create( event )
     )
 
     -- Create large text string
-    local safetyTipsText = [[
-  Before reporting a harzard consider making a note of the hazard’s location - if possible, identify a landmark that will make the location easy to find.
+    local generalTipsText = [[
+    Be aware of sharks while swimming, although shark attacks are rare. Travellers should still take into consideration. Swim between the red and yellow flags and avoid swimming in dusk or evening and in deep water.
 
-                        ACT
-  For hazards on roads please inform Main Roads ACT calling 132 281.
+    Crocodiles should be considered in the northern areas of Australia. There is generally always multiple signage advising of a crocodile area but ask for expert advice before camping or fishing near a river, deep pool or mangrove. Never stay or camp in areas with crocodile tracks, especially close to the water’s edge.
 
-                        NT
-  For hazards on roads please inform Main Roads NT calling 1800 246 199.
+    Australia is a large country with a highly urbanised population of ca. 24 million clustered along the coast.
 
-                        QLD
-  For hazards on roads please inform Main Roads QLD calling 131 940.
+    Always carry a valid driving license and a translation if the license isn't in English.
 
-                        SA
-  For hazards on roads please inform Main Roads SA calling 1800 018 313.
+    Do not interfere with the flora and fauna when staying in national parks. Penalties can apply for lighting fires, damaging bushland or trying to interact with the wildlife.
 
-                        TAS
-  For hazards on roads please inform Main Roads TAS calling 1300 139 933.
+    Do not drive along the Nullabor or any other country roads between the hours of dusk and dawn as Kangaroos are always known to be out in this time crossing (this may cause car accidents).
 
-                        WA
-  For hazards on roads please inform Main Roads WA calling 138 138.
-]]
+    When crossing the border into other states make sure to check for certain food items that may not be allowed in to other states (i.e. fruit from WA is not allowed to cross in to SA via car as it may attract certain fruit flies).
+
+    Plan your drive in advance.
+
+    Plan your accommodation in advance.
+    ]]
     -- Create a image and insert it into the scroll view
-    local someTextObject = display.newText( safetyTipsText, 0,320,300,0, "/assets/Arial.ttf", 18 )
+    local someTextObject = display.newText( generalTipsText, 0,320,300,0, "/assets/Arial.ttf", 18 )
     someTextObject.x = display.contentCenterX
     scrollView:insert (someTextObject)
   	sceneGroup:insert (scrollView)
 
-    local title = display.newImageRect( sceneGroup, "/assets/title.png" , 150, 60 )
+    local title = display.newImageRect( sceneGroup, "/assets/generalTips.png" , 150, 60 )
     title.x = display.contentCenterX
     title.y = 10
 

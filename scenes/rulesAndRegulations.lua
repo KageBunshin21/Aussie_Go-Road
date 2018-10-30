@@ -1,18 +1,18 @@
 -----------------------------------------------------------------------------------------
 --
--- Interesting Facts_scene.lua
+-- Rules and Regulations_scene.lua
 --
 -----------------------------------------------------------------------------------------
 
 local composer = require( "composer" )
-
+ 
 local scene = composer.newScene()
 
 -- -----------------------------------------------------------------------------------
 -- Code outside of the scene event functions below will only be executed ONCE unless
 -- the scene is removed entirely (not recycled) via "composer.removeScene()"
 -- -----------------------------------------------------------------------------------
-
+ 
 local function gotoIntro()
     composer.gotoScene( "scenes.intro" )
 end
@@ -20,38 +20,21 @@ end
 -- -------------------------------------------------------------------------------------
 -- Scene event functions
 -- -------------------------------------------------------------------------------------
-
+ 
 -- create()
 function scene:create( event )
-
+ 
     local sceneGroup = self.view
     -- Code here runs when the scene is first created but has not yet appeared on screen
 
-    local factTxt = [[
-    Threats to Freycinet National Park include tourism and recreation, due to the construction of roads and accommodations as well as trails and lookouts. Traveling through the park has an impact on vegetation, including direct damage and disease transmission between soil types.
+    local background = display.newImageRect( sceneGroup, "/assets/newaustralia.png", 320, 480 )
+    background.x = display.contentCenterX
+    background.y = display.contentCenterY
 
-    Visitors to Freycinet National Park can stay in eco-retreats, simple campgrounds with tents, or luxurious retreats. Camping is done by ballot because it is so popular.
-  ]]
-
-  local options = {
-     text = factTxt,
-     x = display.contentCenterX,
-     y = display.contentCenterY,
-     width = 290,
-     height = 350,
-     fontSize = 18,
-     align = "left",
-     font ="/assets/Arial.ttf"
-  }
-
-  local textField = display.newText( options )
-  textField:setFillColor( 1, 1, 1 )
-	sceneGroup:insert (textField)
-
-    local title = display.newImageRect( sceneGroup, "/assets/factsTitle.png" , 150, 80 )
+    local title = display.newImageRect( sceneGroup, "/assets/title.png" , 150, 60 )
     title.x = display.contentCenterX
     title.y = 10
-
+    
     local backButton = display.newImageRect( sceneGroup, "/assets/back.png", 150, 60 )
     backButton.x = display.contentCenterX
     backButton.y = 468
@@ -59,49 +42,49 @@ function scene:create( event )
     backButton:addEventListener( "tap", gotoIntro)
 
 end
-
-
+ 
+ 
 -- show()
 function scene:show( event )
-
+ 
     local sceneGroup = self.view
     local phase = event.phase
-
+ 
     if ( phase == "will" ) then
         -- Code here runs when the scene is still off screen (but is about to come on screen)
-
+ 
     elseif ( phase == "did" ) then
         -- Code here runs when the scene is entirely on screen
-
+ 
     end
 end
-
-
+ 
+ 
 -- hide()
 function scene:hide( event )
-
+ 
     local sceneGroup = self.view
     local phase = event.phase
-
+ 
     if ( phase == "will" ) then
         -- Code here runs when the scene is on screen (but is about to go off screen)
-
+ 
     elseif ( phase == "did" ) then
         -- Code here runs immediately after the scene goes entirely off screen
-
+ 
     end
 end
-
-
+ 
+ 
 -- destroy()
 function scene:destroy( event )
-
+ 
     local sceneGroup = self.view
     -- Code here runs prior to the removal of scene's view
-
+ 
 end
-
-
+ 
+ 
 -- -----------------------------------------------------------------------------------
 -- Scene event function listeners
 -- -----------------------------------------------------------------------------------
@@ -110,5 +93,5 @@ scene:addEventListener( "show", scene )
 scene:addEventListener( "hide", scene )
 scene:addEventListener( "destroy", scene )
 -- -----------------------------------------------------------------------------------
-
+ 
 return scene

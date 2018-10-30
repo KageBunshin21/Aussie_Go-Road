@@ -53,8 +53,8 @@ function scene:create( event )
             top = 70,
             width = display.contentWidth,
             height = 350,
-            topPadding = 20,
-            bottomPadding = 0,
+            topPadding = 450,
+            bottomPadding = -400,
             horizontalScrollDisable = true,
             verticalScrollDisable = false,
             listener = scrollListener,
@@ -64,33 +64,33 @@ function scene:create( event )
 
     -- Create large text string
     local safetyTipsText = [[
-  Before reporting a harzard consider making a note of the hazard’s location - if possible, identify a landmark that will make the location easy to find.
+    Swim between the flags. The red and yellow flags on Australian beaches show you where it is safe to swim and where a lifeguard is on duty. Also take notice of any  warning signs you see at the beach and be sure to ask a lifeguard if you’re unsure the water is safe. A singular yellow flag warns that conditions are potentially dangerous whilst a red flag shows that the beach is closed due to excessively dangerous swimming conditions.
 
-                        ACT
-  For hazards on roads please inform Main Roads ACT calling 132 281.
+    In Alice Springs there has been an increase on tourists who have been attacked, including robberies and rape. It warns that tourists should only park campervans on sites that offer security surveillance.
 
-                        NT
-  For hazards on roads please inform Main Roads NT calling 1800 246 199.
+    Consequently the road network varies greatly in type, surface and the provision of services en route.  There are often very long distances between towns which have fuel, water and/or food. So back some snacks.
 
-                        QLD
-  For hazards on roads please inform Main Roads QLD calling 131 940.
+    Make sure you take a break every 3 or 4 hrs.
 
-                        SA
-  For hazards on roads please inform Main Roads SA calling 1800 018 313.
+    Many remote roads are unsealed. Drivers should take care when driving on dirt/mud roads, as this where most people crash or become stuck.
 
-                        TAS
-  For hazards on roads please inform Main Roads TAS calling 1300 139 933.
+    Make sure to have extra fuel put away in jerry cans as there are chances you may run out before the next fuel station (sometimes fuel stations are not open on certain days during the week along the country roads and may prolong the driving further).
 
-                        WA
-  For hazards on roads please inform Main Roads WA calling 138 138.
-]]
+    The blue asbestos dust present in and around Wittenoom may cause cancer if inhaled (Geocentral Datum Australia, 2006) while the risk from such fibres to short term visitors is significantly less than to residents, the Ashburton Shire Council advocates avoidance of the Wittenoom area.
+
+    Be aware of marine stingers in coastal areas (October to April) Swim within enclosures where possible.
+
+    Carry just enough cash to spend an extra night in accommodation if your vehicle breaks down or roads are impassable, but not too much cah as to jeopardise your safety.
+
+    In Central Australia, rainfall can make some roads impassable, even with a 4WD vehicle. Full information on road conditions should be obtained from local authorities before departure.
+    ]]
     -- Create a image and insert it into the scroll view
     local someTextObject = display.newText( safetyTipsText, 0,320,300,0, "/assets/Arial.ttf", 18 )
     someTextObject.x = display.contentCenterX
     scrollView:insert (someTextObject)
   	sceneGroup:insert (scrollView)
 
-    local title = display.newImageRect( sceneGroup, "/assets/title.png" , 150, 60 )
+    local title = display.newImageRect( sceneGroup, "/assets/safetyTips.png" , 150, 60 )
     title.x = display.contentCenterX
     title.y = 10
 
