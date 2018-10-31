@@ -25,36 +25,6 @@ local function gotoMainMenu()
 	composer.gotoScene("scenes.mainMenu")
 end
 
-local function gotoWarning()
-	--Warning functionality should be added here
-	--the Warning pop up should check if there is a valid warning
-		-- if yes it should should show warnin
-		--goes in show scene
-					
-		-- Handler that gets notified when the alert closes
-		--local function onComplete( event )
-		--	if ( event.action == "clicked" ) then
-		--		local i = event.index
-		--		if ( i == 1 ) then
-					-- Do nothing; dialog will disply the no warnings message
-		--			local noWarning = display.newText("No current warnings in your vicinity", 160, 240, "Arial", 35)
-		--			noWarning:setFillColor(0.0, 0.5, 0.9)
-		--		elseif ( i == 2 ) then
-					-- Open URL if "Learn More" (second button) was clicked
-					--get warning
-					--
-		--		end
-		--	end
-		--end
-		  
-		-- Show alert with two buttons
-		--local alert = native.showAlert( "Corona", "Dream. Build. Ship.", { "OK", "Learn More" }, onComplete )
-		
- --new stuff end
-		
-	composer.gotoScene("scenes.warnings")
-end
-
 -- specifies that the overlay is a modal (the parent scene cannot be interacted with)
 -- also dictates that when closed/opened, the overlay will take 400ms
 local overlayOptions = {
@@ -62,6 +32,10 @@ local overlayOptions = {
 	effect = "fade",
 	time = 400
 }
+
+local function gotoWarning()
+	composer.showOverlay ("scenes.warnings", overlayOptions)	
+end
 
 local function gotoSOS()
 	-- opens the sos confirmation overlay
@@ -78,8 +52,6 @@ local function gotoGPS()
 	--the pop up for the GPS coordinates should go in show scene
 	composer.showOverlay ("scenes.gps", overlayOptions)
 end
-
------ERRROOORRRR
 
 -- -------------------------------------------------------------------------------------
 -- Scene event functions

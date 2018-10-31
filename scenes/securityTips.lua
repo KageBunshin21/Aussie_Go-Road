@@ -1,6 +1,6 @@
 -----------------------------------------------------------------------------------------
 --
--- reportIncidents.lua
+-- securityTips.lua
 -- created by Michael Ibesa and Ricardo Felix Costa
 --
 -----------------------------------------------------------------------------------------
@@ -15,7 +15,7 @@ local scene = composer.newScene()
 -- -----------------------------------------------------------------------------------
 
 local function goBack()
-    composer.gotoScene( "scenes.mainMenu" )
+    composer.gotoScene( "scenes.tipsAndTricks" )
 end
 
 -- -------------------------------------------------------------------------------------
@@ -54,8 +54,8 @@ function scene:create( event )
             top = 70,
             width = display.contentWidth,
             height = 350,
-            topPadding = 35,
-            bottomPadding = 0,
+            topPadding = 255,
+            bottomPadding = -200,
             horizontalScrollDisable = true,
             verticalScrollDisable = false,
             listener = scrollListener,
@@ -64,34 +64,31 @@ function scene:create( event )
     )
 
     -- Create large text string
-    local safetyTipsText = [[
-  Before reporting a hazard, consider making a note of the hazard’s location - if possible, identify a landmark that will make the location easy to find.
+    local securityTipsText = [[
+    If you think you’ll be using a public Wi-Fi network on a regular basis, set-up a VPN (Virtual Private Network) before you travel. This encrypted connection will keep your device and your data safe from any would-be hackers.
 
-                        ACT
-  For hazards on roads please inform Main Roads ACT by calling 132 281.
+    Make sure you take a break from driving every 3 or 4 hours.
 
-                        NT
-  For hazards on roads please inform Main Roads NT by calling 1800 246 199.
+    Take a satellite phone if possible. Many remote areas have no signal whatsoever and it could be hours of driving between phone lines. Satellite phones can be rented in capital cities or larger towns.
 
-                        QLD
-  For hazards on roads please inform Main Roads QLD by calling 131 940.
+    Many Aboriginal communities and areas (especially in Northern Australia) require permission to enter the land. This approval must be granted by the local government prior to arriving.
 
-                        SA
-  For hazards on roads please inform Main Roads SA by calling 1800 018 313.
+    Natural landmarks may have cultural/legal restrictions (e.g. Uluru). Always check signage and ask for expert advice before touching, taking photos of, or climbing on landmarks.
 
-                        TAS
-  For hazards on roads please inform Main Roads TAS by calling 1300 139 933.
+    Do not travel along country roads alone if you do not know them well (some country roads are not on maps and can make it especially hard if you are lost).
 
-                        WA
-  For hazards on roads please inform Main Roads WA by calling 138 138.
-]]
+    While visitors are permitted in the township of Woomera, entry to the Woomera Prohibited Area is by permit only, entry in the immediate corridors of the Stuart Highway and the Road from Coober Pedy to William Creek. Camping is not permitted in the area.
+
+    When travelling on the Great Central Road from WA to NT, Anne Beadell and Gun Barrell Highway and Tanami Rd, make sure you have the appropriate permits to enter these areas.
+
+    ]]
     -- Create a image and insert it into the scroll view
-    local someTextObject = display.newText( safetyTipsText, 0,320,300,0, "assets/Arial.ttf", 18 )
+    local someTextObject = display.newText( securityTipsText, 0,320,300,0, "assets/Arial", 18 )
     someTextObject.x = display.contentCenterX
     scrollView:insert (someTextObject)
-  	sceneGroup:insert (scrollView)
+    sceneGroup:insert (scrollView)
 
-    local title = display.newImageRect( sceneGroup, "assets/title.png" , 150, 60 )
+    local title = display.newImageRect( sceneGroup, "assets/securityTips.png" , 320, 75 )
     title.x = display.contentCenterX
     title.y = 10
 
