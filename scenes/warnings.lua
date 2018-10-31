@@ -1,6 +1,7 @@
 -----------------------------------------------------------------------------------------
 --
 -- warnings.lua
+-- created by Ashley Thorne-Jeffrey and Lynette Lowe
 --
 -----------------------------------------------------------------------------------------
 
@@ -13,8 +14,9 @@ local scene = composer.newScene()
 -- the scene is removed entirely (not recycled) via "composer.removeScene()"
 -- -----------------------------------------------------------------------------------
  
-local function gotoIntro()
-    composer.gotoScene( "scenes.intro" )
+function closeOverlay()
+    -- hides the overlay with a fade effect lasting 400ms
+    composer.hideOverlay( "fade", 400 )
 end
 
 -- -------------------------------------------------------------------------------------
@@ -27,19 +29,19 @@ function scene:create( event )
     local sceneGroup = self.view
     -- Code here runs when the scene is first created but has not yet appeared on screen
 
-    local background = display.newImageRect( sceneGroup, "assets/newaustralia.png", 320, 480 )
-    background.x = display.contentCenterX
-    background.y = display.contentCenterY
+    local optionsBox = display.newRect( display.contentCenterX, display.contentCenterY, 240, 150 )
+    sceneGroup:insert( optionsBox )
+    optionsBox:setFillColor(0)
 
-    local title = display.newImageRect( sceneGroup, "assets/title.png" , 150, 60 )
-    title.x = display.contentCenterX
-    title.y = 10
-    
-    local backButton = display.newImageRect( sceneGroup, "assets/back.png", 150, 60 )
-    backButton.x = display.contentCenterX
-    backButton.y = 468
+    local warningMessage = display.newImageRect( sceneGroup, "assets/warningmessage.png" , 240, 90 )
+    warningMessage.x = display.contentCenterX
+    warningMessage.y = display.contentCenterY - 35
 
-    backButton:addEventListener( "tap", gotoIntro)
+    local okayButton = display.newImageRect( sceneGroup, "assets/okay.png" , 120, 90 )
+    okayButton.x = display.contentCenterX
+    okayButton.y = display.contentCenterY + 30
+
+    okayButton:addEventListener( "tap", closeOverlay)
 
 end
  
