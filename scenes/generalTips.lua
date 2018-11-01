@@ -15,7 +15,7 @@ local scene = composer.newScene()
 -- -----------------------------------------------------------------------------------
 
 local function goBack()
-    composer.gotoScene( "scenes.tipsAndTricks" )
+    composer.gotoScene( "scenes.tipsAndTricks", "crossFade", 500 )
 end
 
 -- -------------------------------------------------------------------------------------

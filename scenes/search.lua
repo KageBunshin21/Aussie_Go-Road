@@ -6,91 +6,91 @@
 -----------------------------------------------------------------------------------------
 
 local composer = require( "composer" )
- 
+
 local scene = composer.newScene()
 
 -- -----------------------------------------------------------------------------------
 -- Code outside of the scene event functions below will only be executed ONCE unless
 -- the scene is removed entirely (not recycled) via "composer.removeScene()"
 -- -----------------------------------------------------------------------------------
- 
+
 local function goBack()
-	composer.gotoScene( "scenes.intro" )
+	composer.gotoScene( "scenes.intro", "crossFade", 500  )
 end
 
 local function goKarijini()
 	_G.selectedLocation = 1
-    composer.gotoScene( "scenes.planRouteScene" )    
+    composer.gotoScene( "scenes.planRouteScene", "crossFade", 500  )
 end
 
 local function goKalgoorlie()
-	_G.selectedLocation = 2 
-    composer.gotoScene( "scenes.planRouteScene" )
+	_G.selectedLocation = 2
+    composer.gotoScene( "scenes.planRouteScene", "crossFade", 500  )
 end
 
 local function goBarossa()
 	_G.selectedLocation = 3
-    composer.gotoScene( "scenes.planRouteScene" )    
+    composer.gotoScene( "scenes.planRouteScene", "crossFade", 500  )
 end
 
 local function goAnangu()
 	_G.selectedLocation = 4
-    composer.gotoScene( "scenes.planRouteScene" )
+    composer.gotoScene( "scenes.planRouteScene", "crossFade", 500  )
 end
 
 local function goOceanRoad()
 	_G.selectedLocation = 5
-    composer.gotoScene( "scenes.planRouteScene" )
+    composer.gotoScene( "scenes.planRouteScene", "crossFade", 500  )
 end
 
 local function goGrampians()
 	_G.selectedLocation = 6
-    composer.gotoScene( "scenes.planRouteScene" )
+    composer.gotoScene( "scenes.planRouteScene", "crossFade", 500  )
 end
 
 local function goKakadu()
 	_G.selectedLocation = 7
-    composer.gotoScene( "scenes.planRouteScene" )
+    composer.gotoScene( "scenes.planRouteScene", "crossFade", 500  )
 end
 
 local function goUluru()
 	_G.selectedLocation = 8
-    composer.gotoScene( "scenes.planRouteScene" )
+    composer.gotoScene( "scenes.planRouteScene", "crossFade", 500  )
 end
 
 local function goBarrierReef()
 	_G.selectedLocation = 9
-    composer.gotoScene( "scenes.planRouteScene" )
+    composer.gotoScene( "scenes.planRouteScene", "crossFade", 500  )
 end
 
 local function goKuranda()
 	_G.selectedLocation = 10
-    composer.gotoScene( "scenes.planRouteScene" )
+    composer.gotoScene( "scenes.planRouteScene", "crossFade", 500  )
 end
 
 local function goSydney()
-	_G.selectedLocation = 11 
-    composer.gotoScene( "scenes.planRouteScene" )
+	_G.selectedLocation = 11
+    composer.gotoScene( "scenes.planRouteScene", "crossFade", 500 )
 end
 
 local function goBlueMountains()
 	_G.selectedLocation = 12
-    composer.gotoScene( "scenes.planRouteScene" )
+    composer.gotoScene( "scenes.planRouteScene", "crossFade", 500  )
 end
 
 local function goCanberra()
 	_G.selectedLocation = 13
-    composer.gotoScene( "scenes.planRouteScene" )
+    composer.gotoScene( "scenes.planRouteScene", "crossFade", 500  )
 end
 
 local function goCradleMountain()
 	_G.selectedLocation = 14
-    composer.gotoScene( "scenes.planRouteScene" )
+    composer.gotoScene( "scenes.planRouteScene", "crossFade", 500  )
 end
 
 local function goFreycinet()
 	_G.selectedLocation = 15
-    composer.gotoScene( "scenes.planRouteScene" )
+    composer.gotoScene( "scenes.planRouteScene", "crossFade", 500  )
 end
 
 
@@ -98,10 +98,10 @@ end
 -- -------------------------------------------------------------------------------------
 -- Scene event functions
 -- -------------------------------------------------------------------------------------
- 
+
 -- create()
 function scene:create( event )
- 
+
     local sceneGroup = self.view
     -- Code here runs when the scene is first created but has not yet appeared on screen
 
@@ -116,7 +116,7 @@ function scene:create( event )
     local subtitle = display.newImageRect( sceneGroup, "assets/searchsubtitle.png" , 213, 50 )
     subtitle.x = display.contentCenterX
     subtitle.y = 60
-    
+
     local backButton = display.newImageRect( sceneGroup, "assets/back.png", 150, 60 )
     backButton.x = display.contentCenterX
     backButton.y = 468
@@ -198,49 +198,49 @@ function scene:create( event )
 	freycinetButton.y = 405
 	freycinetButton:addEventListener("tap", goFreycinet)
 end
- 
- 
+
+
 -- show()
 function scene:show( event )
- 
+
     local sceneGroup = self.view
     local phase = event.phase
- 
+
     if ( phase == "will" ) then
         -- Code here runs when the scene is still off screen (but is about to come on screen)
- 
+
     elseif ( phase == "did" ) then
         -- Code here runs when the scene is entirely on screen
- 
+
     end
 end
- 
- 
+
+
 -- hide()
 function scene:hide( event )
- 
+
     local sceneGroup = self.view
     local phase = event.phase
- 
+
     if ( phase == "will" ) then
         -- Code here runs when the scene is on screen (but is about to go off screen)
- 
+
     elseif ( phase == "did" ) then
         -- Code here runs immediately after the scene goes entirely off screen
- 
+
     end
 end
- 
- 
+
+
 -- destroy()
 function scene:destroy( event )
- 
+
     local sceneGroup = self.view
     -- Code here runs prior to the removal of scene's view
- 
+
 end
- 
- 
+
+
 -- -----------------------------------------------------------------------------------
 -- Scene event function listeners
 -- -----------------------------------------------------------------------------------
@@ -249,5 +249,5 @@ scene:addEventListener( "show", scene )
 scene:addEventListener( "hide", scene )
 scene:addEventListener( "destroy", scene )
 -- -----------------------------------------------------------------------------------
- 
+
 return scene

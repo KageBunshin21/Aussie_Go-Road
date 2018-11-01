@@ -6,7 +6,7 @@
 -----------------------------------------------------------------------------------------
 
 local composer = require( "composer" )
- 
+
 local scene = composer.newScene()
 
 -- -----------------------------------------------------------------------------------
@@ -18,11 +18,11 @@ local function gotoSearch()
 	--this function should creat the search bar
 	--the search bar interaction should then appear in the show event stage
 		--if the input is a target link to load info
-	composer.gotoScene("scenes.search")
+	composer.gotoScene("scenes.search", "crossFade", 500 )
 end
 
 local function gotoMainMenu()
-	composer.gotoScene("scenes.mainMenu")
+	composer.gotoScene("scenes.mainMenu", "crossFade", 500 )
 end
 
 -- specifies that the overlay is a modal (the parent scene cannot be interacted with)
@@ -34,12 +34,12 @@ local overlayOptions = {
 }
 
 local function gotoWarning()
-	composer.showOverlay ("scenes.warnings", overlayOptions)	
+	composer.showOverlay ("scenes.warnings", overlayOptions)
 end
 
 local function gotoSOS()
 	-- opens the sos confirmation overlay
-	composer.showOverlay ("scenes.sos", overlayOptions)	
+	composer.showOverlay ("scenes.sos", overlayOptions)
 end
 
 local function gotoExit()
@@ -56,10 +56,10 @@ end
 -- -------------------------------------------------------------------------------------
 -- Scene event functions
 -- -------------------------------------------------------------------------------------
- 
+
 -- create()
 function scene:create( event )
- 
+
 	local sceneGroup = self.view
 	-- Code here runs when the scene is first created but has not yet appeared on screen
 
@@ -70,15 +70,15 @@ function scene:create( event )
 	local title = display.newImageRect( sceneGroup, "assets/title.png" , 150, 60 )
 	title.x = display.contentCenterX
 	title.y = 10
-	
+
 -- -------------------------------------------------------------------------------------
 -- Buttons
--- -------------------------------------------------------------------------------------	
-	
+-- -------------------------------------------------------------------------------------
+
 	local SearchButton = display.newImageRect( sceneGroup, "assets/search.png", 65, 65 )
 	SearchButton.x = 40
 	SearchButton.y = 10
-	
+
 	local GPSButton = display.newImageRect( sceneGroup, "assets/gps.png", 65, 65 )
 	GPSButton.x = 280
 	GPSButton.y = 10
@@ -90,15 +90,15 @@ function scene:create( event )
 	local menuButton = display.newImageRect( sceneGroup, "assets/mainmenu.png", 150, 60 )
 	menuButton.x = display.contentCenterX
 	menuButton.y = 468
-	
+
 	local SOSButton = display.newImageRect( sceneGroup, "assets/SOS.png", 65, 65 )
 	SOSButton.x = 40
 	SOSButton.y = 470
-	
+
 	local ExitButton = display.newImageRect( sceneGroup, "assets/exit.png", 65, 65 )
 	ExitButton.x = 280
 	ExitButton.y = 470
-	
+
 -- -------------------------------------------------------------------------------------
 
 	SearchButton:addEventListener( "tap", gotoSearch)
@@ -112,42 +112,42 @@ end
 -- -------------------------------------------------------------------------------------
 -- show()
 function scene:show( event )
- 
+
     local sceneGroup = self.view
     local phase = event.phase
- 
+
     if ( phase == "will" ) then
         -- Code here runs when the scene is still off screen (but is about to come on screen)
- 
+
     elseif ( phase == "did" ) then
         -- Code here runs when the scene is entirely on screen
- 
+
     end
 end
- 
+
 -- hide()
 function scene:hide( event )
- 
+
     local sceneGroup = self.view
     local phase = event.phase
- 
+
     if ( phase == "will" ) then
         -- Code here runs when the scene is on screen (but is about to go off screen)
- 
+
     elseif ( phase == "did" ) then
         -- Code here runs immediately after the scene goes entirely off screen
- 
+
     end
 end
- 
+
 -- destroy()
 function scene:destroy( event )
- 
+
     local sceneGroup = self.view
     -- Code here runs prior to the removal of scene's view
- 
+
 end
- 
+
 -- -----------------------------------------------------------------------------------
 -- Scene event function listeners
 -- -----------------------------------------------------------------------------------
@@ -156,5 +156,5 @@ scene:addEventListener( "show", scene )
 scene:addEventListener( "hide", scene )
 scene:addEventListener( "destroy", scene )
 -- -----------------------------------------------------------------------------------
- 
+
 return scene

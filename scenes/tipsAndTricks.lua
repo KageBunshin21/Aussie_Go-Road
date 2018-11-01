@@ -15,19 +15,19 @@ local scene = composer.newScene()
 -- -----------------------------------------------------------------------------------
 
 local function gotoGeneralTips()
-    composer.gotoScene( "scenes.generalTips" )
+    composer.gotoScene( "scenes.generalTips", "crossFade", 500  )
 end
 
 local function gotoSafetyTips()
-    composer.gotoScene( "scenes.safetyTips" )
+    composer.gotoScene( "scenes.safetyTips", "crossFade", 500  )
 end
 
 local function gotoSecurityTips()
-    composer.gotoScene( "scenes.securityTips" )
+    composer.gotoScene( "scenes.securityTips", "crossFade", 500  )
 end
 
 local function goBack()
-    composer.gotoScene( "scenes.mainMenu" )
+    composer.gotoScene( "scenes.mainMenu", "crossFade", 500  )
 end
 
 
