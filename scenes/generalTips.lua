@@ -1,6 +1,7 @@
 -----------------------------------------------------------------------------------------
 --
--- Interesting Facts_scene.lua
+-- generalTips.lua
+-- created by Michael Ibesa and Ricardo Felix Costa
 --
 -----------------------------------------------------------------------------------------
 
@@ -13,8 +14,8 @@ local scene = composer.newScene()
 -- the scene is removed entirely (not recycled) via "composer.removeScene()"
 -- -----------------------------------------------------------------------------------
 
-local function gotoIntro()
-    composer.gotoScene( "scenes.intro" )
+local function goBack()
+    composer.gotoScene( "scenes.tipsAndTricks" )
 end
 
 -- -------------------------------------------------------------------------------------
@@ -53,7 +54,7 @@ function scene:create( event )
             top = 70,
             width = display.contentWidth,
             height = 350,
-            topPadding = 220,
+            topPadding = 245,
             bottomPadding = -200,
             horizontalScrollDisable = true,
             verticalScrollDisable = false,
@@ -64,39 +65,39 @@ function scene:create( event )
 
     -- Create large text string
     local generalTipsText = [[
-    Be aware of sharks while swimming, although shark attacks are rare. Travellers should still take into consideration. Swim between the red and yellow flags and avoid swimming in dusk or evening and in deep water.
+    Be aware of sharks while swimming. Although shark attacks are rare,  travellers should always be careful. Swim between the red and yellow flags and avoid swimming in dusk or evening and in deep water.
 
-    Crocodiles should be considered in the northern areas of Australia. There is generally always multiple signage advising of a crocodile area but ask for expert advice before camping or fishing near a river, deep pool or mangrove. Never stay or camp in areas with crocodile tracks, especially close to the water’s edge.
+    Crocodiles must be considered in the northern areas of Australia. There are generally always multiple signs present advising travellers of a crocodile area but ask for expert advice before camping or fishing near a river, deep pool or mangrove. Never stay or camp in areas with crocodile tracks, especially close to the water’s edge.
 
-    Australia is a large country with a highly urbanised population of ca. 24 million clustered along the coast.
+    Australia is a large country with a highly urbanised population of approximately 24 million people, mostly clustered along the coast.
 
     Always carry a valid driving license and a translation if the license isn't in English.
 
     Do not interfere with the flora and fauna when staying in national parks. Penalties can apply for lighting fires, damaging bushland or trying to interact with the wildlife.
 
-    Do not drive along the Nullabor or any other country roads between the hours of dusk and dawn as Kangaroos are always known to be out in this time crossing (this may cause car accidents).
+    Do not drive along the Nullabor or any other country roads between the hours of dusk and dawn as Kangaroos are known to jump across the road during these hours (this may cause car accidents).
 
-    When crossing the border into other states make sure to check for certain food items that may not be allowed in to other states (i.e. fruit from WA is not allowed to cross in to SA via car as it may attract certain fruit flies).
+    When crossing the border into other states make sure to check for certain food items that may not be allowed in other states (i.e. fruit from WA is not allowed to cross in to SA via car as it may attract certain fruit flies).
 
     Plan your drive in advance.
 
     Plan your accommodation in advance.
     ]]
     -- Create a image and insert it into the scroll view
-    local someTextObject = display.newText( generalTipsText, 0,320,300,0, "/assets/Arial.ttf", 18 )
+    local someTextObject = display.newText( generalTipsText, 0,320,300,0, "assets/Arial.ttf", 18 )
     someTextObject.x = display.contentCenterX
     scrollView:insert (someTextObject)
   	sceneGroup:insert (scrollView)
 
-    local title = display.newImageRect( sceneGroup, "/assets/generalTips.png" , 150, 60 )
+    local title = display.newImageRect( sceneGroup, "assets/generalTips.png" , 320, 75 )
     title.x = display.contentCenterX
     title.y = 10
 
-    local backButton = display.newImageRect( sceneGroup, "/assets/back.png", 150, 60 )
+    local backButton = display.newImageRect( sceneGroup, "assets/back.png", 150, 60 )
     backButton.x = display.contentCenterX
     backButton.y = 468
 
-    backButton:addEventListener( "tap", gotoIntro)
+    backButton:addEventListener( "tap", goBack)
 
 end
 

@@ -1,6 +1,7 @@
 -----------------------------------------------------------------------------------------
 --
--- Interesting Facts_scene.lua
+-- securityTips.lua
+-- created by Michael Ibesa and Ricardo Felix Costa
 --
 -----------------------------------------------------------------------------------------
 
@@ -13,8 +14,8 @@ local scene = composer.newScene()
 -- the scene is removed entirely (not recycled) via "composer.removeScene()"
 -- -----------------------------------------------------------------------------------
 
-local function gotoIntro()
-    composer.gotoScene( "scenes.intro" )
+local function goBack()
+    composer.gotoScene( "scenes.tipsAndTricks" )
 end
 
 -- -------------------------------------------------------------------------------------
@@ -53,7 +54,7 @@ function scene:create( event )
             top = 70,
             width = display.contentWidth,
             height = 350,
-            topPadding = 240,
+            topPadding = 255,
             bottomPadding = -200,
             horizontalScrollDisable = true,
             verticalScrollDisable = false,
@@ -64,17 +65,17 @@ function scene:create( event )
 
     -- Create large text string
     local securityTipsText = [[
-    If you think you’ll be using public Wi-Fi networks on a regular basis, set-up a VPN (Virtual Private Network) before you travel. This encrypted connection will keep your device and your data safe from any would-be hackers.
+    If you think you’ll be using a public Wi-Fi network on a regular basis, set-up a VPN (Virtual Private Network) before you travel. This encrypted connection will keep your device and your data safe from any would-be hackers.
 
-    Make sure you take a break every 3 or 4 hrs.
+    Make sure you take a break from driving every 3 or 4 hours.
 
     Take a satellite phone if possible. Many remote areas have no signal whatsoever and it could be hours of driving between phone lines. Satellite phones can be rented in capital cities or larger towns.
 
     Many Aboriginal communities and areas (especially in Northern Australia) require permission to enter the land. This approval must be granted by the local government prior to arriving.
 
-    Natural landmarks may have cultural/legal restrictions (e.g. Uluru). Always check signage and ask expert advice before touching, taking photos, or climbing on landmarks.
+    Natural landmarks may have cultural/legal restrictions (e.g. Uluru). Always check signage and ask for expert advice before touching, taking photos of, or climbing on landmarks.
 
-    Do not travel country roads alone if you do not know them well (some country roads are not on maps and can make it especially hard if you are lost).
+    Do not travel along country roads alone if you do not know them well (some country roads are not on maps and can make it especially hard if you are lost).
 
     While visitors are permitted in the township of Woomera, entry to the Woomera Prohibited Area is by permit only, entry in the immediate corridors of the Stuart Highway and the Road from Coober Pedy to William Creek. Camping is not permitted in the area.
 
@@ -82,20 +83,20 @@ function scene:create( event )
 
     ]]
     -- Create a image and insert it into the scroll view
-    local someTextObject = display.newText( securityTipsText, 0,320,300,0, "/assets/Arial", 18 )
+    local someTextObject = display.newText( securityTipsText, 0,320,300,0, "assets/Arial", 18 )
     someTextObject.x = display.contentCenterX
     scrollView:insert (someTextObject)
     sceneGroup:insert (scrollView)
 
-    local title = display.newImageRect( sceneGroup, "/assets/securityTips.png" , 150, 60 )
+    local title = display.newImageRect( sceneGroup, "assets/securityTips.png" , 320, 75 )
     title.x = display.contentCenterX
     title.y = 10
 
-    local backButton = display.newImageRect( sceneGroup, "/assets/back.png", 150, 60 )
+    local backButton = display.newImageRect( sceneGroup, "assets/back.png", 150, 60 )
     backButton.x = display.contentCenterX
     backButton.y = 468
 
-    backButton:addEventListener( "tap", gotoIntro)
+    backButton:addEventListener( "tap", goBack)
 
 end
 

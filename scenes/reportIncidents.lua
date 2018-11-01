@@ -1,6 +1,7 @@
 -----------------------------------------------------------------------------------------
 --
--- Interesting Facts_scene.lua
+-- reportIncidents.lua
+-- created by Michael Ibesa and Ricardo Felix Costa
 --
 -----------------------------------------------------------------------------------------
 
@@ -13,8 +14,8 @@ local scene = composer.newScene()
 -- the scene is removed entirely (not recycled) via "composer.removeScene()"
 -- -----------------------------------------------------------------------------------
 
-local function gotoIntro()
-    composer.gotoScene( "scenes.intro" )
+local function goBack()
+    composer.gotoScene( "scenes.mainMenu" )
 end
 
 -- -------------------------------------------------------------------------------------
@@ -53,7 +54,7 @@ function scene:create( event )
             top = 70,
             width = display.contentWidth,
             height = 350,
-            topPadding = 20,
+            topPadding = 35,
             bottomPadding = 0,
             horizontalScrollDisable = true,
             verticalScrollDisable = false,
@@ -64,41 +65,41 @@ function scene:create( event )
 
     -- Create large text string
     local safetyTipsText = [[
-  Before reporting a harzard consider making a note of the hazard’s location - if possible, identify a landmark that will make the location easy to find.
+  Before reporting a hazard, consider making a note of the hazard’s location - if possible, identify a landmark that will make the location easy to find.
 
                         ACT
-  For hazards on roads please inform Main Roads ACT calling 132 281.
+  For hazards on roads please inform Main Roads ACT by calling 132 281.
 
                         NT
-  For hazards on roads please inform Main Roads NT calling 1800 246 199.
+  For hazards on roads please inform Main Roads NT by calling 1800 246 199.
 
                         QLD
-  For hazards on roads please inform Main Roads QLD calling 131 940.
+  For hazards on roads please inform Main Roads QLD by calling 131 940.
 
                         SA
-  For hazards on roads please inform Main Roads SA calling 1800 018 313.
+  For hazards on roads please inform Main Roads SA by calling 1800 018 313.
 
                         TAS
-  For hazards on roads please inform Main Roads TAS calling 1300 139 933.
+  For hazards on roads please inform Main Roads TAS by calling 1300 139 933.
 
                         WA
-  For hazards on roads please inform Main Roads WA calling 138 138.
+  For hazards on roads please inform Main Roads WA by calling 138 138.
 ]]
     -- Create a image and insert it into the scroll view
-    local someTextObject = display.newText( safetyTipsText, 0,320,300,0, "/assets/Arial.ttf", 18 )
+    local someTextObject = display.newText( safetyTipsText, 0,320,300,0, "assets/Arial.ttf", 18 )
     someTextObject.x = display.contentCenterX
     scrollView:insert (someTextObject)
   	sceneGroup:insert (scrollView)
 
-    local title = display.newImageRect( sceneGroup, "/assets/title.png" , 150, 60 )
+    local title = display.newImageRect( sceneGroup, "assets/title.png" , 150, 60 )
     title.x = display.contentCenterX
     title.y = 10
 
-    local backButton = display.newImageRect( sceneGroup, "/assets/back.png", 150, 60 )
+    local backButton = display.newImageRect( sceneGroup, "assets/back.png", 150, 60 )
     backButton.x = display.contentCenterX
     backButton.y = 468
 
-    backButton:addEventListener( "tap", gotoIntro)
+    backButton:addEventListener( "tap", goBack)
 
 end
 

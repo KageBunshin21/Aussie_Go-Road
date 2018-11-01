@@ -1,6 +1,7 @@
 -----------------------------------------------------------------------------------------
 --
--- intro_scene.lua
+-- tipsAndTricks.lua
+-- created by Michael Ibesa and Ricardo Felix Costa
 --
 -----------------------------------------------------------------------------------------
 
@@ -25,8 +26,8 @@ local function gotoSecurityTips()
     composer.gotoScene( "scenes.securityTips" )
 end
 
-local function gotoIntro()
-    composer.gotoScene( "scenes.intro" )
+local function goBack()
+    composer.gotoScene( "scenes.mainMenu" )
 end
 
 
@@ -44,17 +45,17 @@ function scene:create( event )
     title.x = display.contentCenterX
     title.y = 10
 
-    local menuButton1 = display.newImageRect( sceneGroup, "assets/generalTips.png", 300, 50 )
+    local menuButton1 = display.newImageRect( sceneGroup, "assets/generalTips.png", 320, 75 )
     menuButton1.x = display.contentCenterX
-    menuButton1.y = 125
+    menuButton1.y = 150
 
-    local menuButton2 = display.newImageRect( sceneGroup, "assets/safetyTips.png", 300, 50 )
+    local menuButton2 = display.newImageRect( sceneGroup, "assets/safetyTips.png", 320, 75 )
     menuButton2.x = display.contentCenterX
-    menuButton2.y = 200
+    menuButton2.y = 225
 
-    local menuButton3 = display.newImageRect( sceneGroup, "assets/securityTips.png", 300, 50 )
+    local menuButton3 = display.newImageRect( sceneGroup, "assets/securityTips.png", 320, 75 )
     menuButton3.x = display.contentCenterX
-    menuButton3.y = 275
+    menuButton3.y = 300
 
     local backButton = display.newImageRect( sceneGroup, "assets/back.png", 150, 60 )
     backButton.x = display.contentCenterX
@@ -63,7 +64,7 @@ function scene:create( event )
     menuButton1:addEventListener( "tap", gotoGeneralTips)
     menuButton2:addEventListener( "tap", gotoSafetyTips)
     menuButton3:addEventListener( "tap", gotoSecurityTips)
-    backButton:addEventListener( "tap", gotoIntro)
+    backButton:addEventListener( "tap", goBack)
 
 end
 

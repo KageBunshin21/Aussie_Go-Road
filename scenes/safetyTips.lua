@@ -1,6 +1,7 @@
 -----------------------------------------------------------------------------------------
 --
--- Interesting Facts_scene.lua
+-- safetyTips.lua
+-- created by Michael Ibesa and Ricardo Felix Costa
 --
 -----------------------------------------------------------------------------------------
 
@@ -13,8 +14,8 @@ local scene = composer.newScene()
 -- the scene is removed entirely (not recycled) via "composer.removeScene()"
 -- -----------------------------------------------------------------------------------
 
-local function gotoIntro()
-    composer.gotoScene( "scenes.intro" )
+local function goBack()
+    composer.gotoScene( "scenes.tipsAndTricks" )
 end
 
 -- -------------------------------------------------------------------------------------
@@ -53,7 +54,7 @@ function scene:create( event )
             top = 70,
             width = display.contentWidth,
             height = 350,
-            topPadding = 450,
+            topPadding = 475,
             bottomPadding = -400,
             horizontalScrollDisable = true,
             verticalScrollDisable = false,
@@ -64,41 +65,41 @@ function scene:create( event )
 
     -- Create large text string
     local safetyTipsText = [[
-    Swim between the flags. The red and yellow flags on Australian beaches show you where it is safe to swim and where a lifeguard is on duty. Also take notice of any  warning signs you see at the beach and be sure to ask a lifeguard if you’re unsure the water is safe. A singular yellow flag warns that conditions are potentially dangerous whilst a red flag shows that the beach is closed due to excessively dangerous swimming conditions.
+    Swim between the flags. The red and yellow flags on Australian beaches show you where it is safe to swim and where a lifeguard is on duty. Also take notice of any warning signs you see at the beach and be sure to ask a lifeguard if you’re unsure whether the water is safe. A singular yellow flag warns that conditions are potentially dangerous whilst a red flag shows that the beach is closed due to excessively dangerous swimming conditions.
 
-    In Alice Springs there has been an increase on tourists who have been attacked, including robberies and rape. It warns that tourists should only park campervans on sites that offer security surveillance.
+    In Alice Springs there has been an increase of tourists who have been attacked, robbed, and raped. It warns that tourists should only park campervans on sites that offer security surveillance.
 
-    Consequently the road network varies greatly in type, surface and the provision of services en route.  There are often very long distances between towns which have fuel, water and/or food. So back some snacks.
+    Consequently roads variy greatly in type, surface and the provision of services en route. There are often very long distances between towns which have fuel, water and/or food. So pack some snacks!
 
-    Make sure you take a break every 3 or 4 hrs.
+    Make sure you take a break from driving every 3 or 4 hours.
 
-    Many remote roads are unsealed. Drivers should take care when driving on dirt/mud roads, as this where most people crash or become stuck.
+    Many remote roads are unsealed. Drivers should take care when driving on dirt/mud roads, as this is where most people crash or become stuck.
 
-    Make sure to have extra fuel put away in jerry cans as there are chances you may run out before the next fuel station (sometimes fuel stations are not open on certain days during the week along the country roads and may prolong the driving further).
+    Make sure to have extra fuel put away in jerry cans as there is a chance that you may run out before the next fuel station (sometimes fuel stations are not open on certain days during the week along the country roads and may prolong the driving further).
 
     The blue asbestos dust present in and around Wittenoom may cause cancer if inhaled (Geocentral Datum Australia, 2006) while the risk from such fibres to short term visitors is significantly less than to residents, the Ashburton Shire Council advocates avoidance of the Wittenoom area.
 
-    Be aware of marine stingers in coastal areas (October to April) Swim within enclosures where possible.
+    Be aware of marine stingrays in coastal areas (October to April), and swim within enclosures where possible.
 
-    Carry just enough cash to spend an extra night in accommodation if your vehicle breaks down or roads are impassable, but not too much cah as to jeopardise your safety.
+    Carry enough cash to spend an extra night in accommodation if your vehicle breaks down or roads are impassable, but not too much cah as to jeopardise your safety.
 
-    In Central Australia, rainfall can make some roads impassable, even with a 4WD vehicle. Full information on road conditions should be obtained from local authorities before departure.
+    In Central Australia, rainfall can make some roads impassable, even with a four-wheel-drive vehicle. Full information on road conditions should be obtained from local authorities before departure.
     ]]
     -- Create a image and insert it into the scroll view
-    local someTextObject = display.newText( safetyTipsText, 0,320,300,0, "/assets/Arial.ttf", 18 )
+    local someTextObject = display.newText( safetyTipsText, 0,320,300,0, "assets/Arial.ttf", 18 )
     someTextObject.x = display.contentCenterX
     scrollView:insert (someTextObject)
   	sceneGroup:insert (scrollView)
 
-    local title = display.newImageRect( sceneGroup, "/assets/safetyTips.png" , 150, 60 )
+    local title = display.newImageRect( sceneGroup, "assets/safetyTips.png" , 320, 75 )
     title.x = display.contentCenterX
     title.y = 10
 
-    local backButton = display.newImageRect( sceneGroup, "/assets/back.png", 150, 60 )
+    local backButton = display.newImageRect( sceneGroup, "assets/back.png", 150, 60 )
     backButton.x = display.contentCenterX
     backButton.y = 468
 
-    backButton:addEventListener( "tap", gotoIntro)
+    backButton:addEventListener( "tap", goBack)
 
 end
 

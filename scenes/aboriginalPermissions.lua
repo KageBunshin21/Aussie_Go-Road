@@ -1,6 +1,7 @@
 -----------------------------------------------------------------------------------------
 --
--- Interesting Facts_scene.lua
+-- aboriginalPermissions.lua
+-- created by Michael Ibesa and Ricardo Felix Costa
 --
 -----------------------------------------------------------------------------------------
 
@@ -32,20 +33,20 @@ function scene:create( event )
      height = 350,
      fontSize = 18,
      align = "center",
-     font ="/assets/Arial.ttf"
+     font ="assets/Arial.ttf"
   }
 
   local textField = display.newText( options )
   textField:setFillColor( 1, 1, 1 )
 	sceneGroup:insert (textField)
 
-    local title = display.newImageRect( sceneGroup, "/assets/title.png" , 150, 80 )
+    local title = display.newImageRect( sceneGroup, "assets/title.png" , 150, 60 )
     title.x = display.contentCenterX
     title.y = 10
 
-    local linkButton = display.newImageRect("/assets/moreinfo.png", 100, 40)
+    local linkButton = display.newImageRect("assets/moreinfo.png", 194, 66)
       linkButton.x=display.contentCenterX
-      linkButton.y=250
+      linkButton.y=300
 
       function linkButton:tap(event)
         system.openURL( "https://www.clc.org.au/index.php?/articles/info/visiting-aboriginal-land")
@@ -53,15 +54,15 @@ function scene:create( event )
         linkButton:addEventListener("tap", linkButton)
         sceneGroup:insert (linkButton)
 
-    local function gotoIntro()
-        composer.gotoScene( "scenes.intro" )
+    local function goBack()
+    composer.gotoScene( "scenes.mainMenu" )
     end
 
-    local backButton = display.newImageRect( sceneGroup, "/assets/back.png", 150, 60 )
+    local backButton = display.newImageRect( sceneGroup, "assets/back.png", 150, 60 )
     backButton.x = display.contentCenterX
     backButton.y = 468
 
-    backButton:addEventListener( "tap", gotoIntro)
+    backButton:addEventListener( "tap", goBack)
 
 end
 

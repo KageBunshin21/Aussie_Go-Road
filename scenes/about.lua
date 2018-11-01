@@ -1,6 +1,7 @@
 -----------------------------------------------------------------------------------------
 --
--- Interesting Facts_scene.lua
+-- about.lua
+-- created by Michael Ibesa and Ricardo Felix Costa
 --
 -----------------------------------------------------------------------------------------
 
@@ -13,8 +14,8 @@ local scene = composer.newScene()
 -- the scene is removed entirely (not recycled) via "composer.removeScene()"
 -- -----------------------------------------------------------------------------------
 
-local function gotoIntro()
-    composer.gotoScene( "scenes.intro" )
+local function goBack()
+    composer.gotoScene( "scenes.mainMenu" )
 end
 
 -- -------------------------------------------------------------------------------------
@@ -30,9 +31,10 @@ function scene:create( event )
     local factTxt = [[This app is a useful and user-friendly app to assist travelers when venturing into new cities, towns, and states within Australia.
     The app has some functional components to assist users in their knowledge regarding their personal safety and security of a geographical area.
 
-Ashley Thorn-Jeffrey
+Created by:
+Ashley Thorne-Jeffrey
 Lynette Lowe
-Michael Ibese
+Michael Ibesa
 Ricardo Felix Costa
 
 ®Aussie Go-Road]]
@@ -43,24 +45,24 @@ Ricardo Felix Costa
      y = display.contentCenterY,
      width = 290,
      height = 350,
-     fontSize = 18,
+     fontSize = 16,
      align = "center",
-     font ="/assets/Arial.ttf"
+     font ="assets/Arial.ttf"
   }
 
   local textField = display.newText( options )
   textField:setFillColor( 1, 1, 1 )
 	sceneGroup:insert (textField)
 
-    local title = display.newImageRect( sceneGroup, "/assets/title.png" , 150, 80 )
+    local title = display.newImageRect( sceneGroup, "assets/title.png" , 150, 60 )
     title.x = display.contentCenterX
     title.y = 10
 
-    local backButton = display.newImageRect( sceneGroup, "/assets/back.png", 150, 60 )
+    local backButton = display.newImageRect( sceneGroup, "assets/back.png", 150, 60 )
     backButton.x = display.contentCenterX
     backButton.y = 468
 
-    backButton:addEventListener( "tap", gotoIntro)
+    backButton:addEventListener( "tap", goBack)
 
 end
 
