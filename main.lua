@@ -1,60 +1,57 @@
 -----------------------------------------------------------------------------------------
 --
 -- main.lua
+-- created by Michael Ibesa and Ashley Thorne-Jeffrey
 --
 -----------------------------------------------------------------------------------------
 
 local composer = require( "composer" )
- 
+
 -- Hide status bar
 display.setStatusBar( display.HiddenStatusBar )
  
 -- Seed the random number generator
 math.randomseed( os.time() )
 
+-- Creates & sets the location flag
+_G.selectedLocation = 0
+
+-- -----------------------------------------------------------------------------------
+-- loading the json file and converting it into lua table 
+-- -----------------------------------------------------------------------------------
+
+-- include the json library to save and load data to a json file
+local json = require "json"
+
+-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-- infoLoad() loads the information of the tourist spots
+-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+function infoLoad( pathname ) --load a table from a file, this is just one way to do saves
+	local data = nil
+	local path = system.pathForFile( pathname..".json", system.ResourceDirectory ) --get the file path
+	local fileHandle = io.open( path, "r" ) -- open the file
+	print(path)	-- just to see the path of system.ResourceDirectory 
+	if fileHandle then -- if opening the file worked, read the file.
+		print("reading file")
+		data = json.decode( fileHandle:read( "*a" ) ) -- decode the JSON into a lua table
+		io.close( fileHandle ) -- close the opened file
+	end
+	return data -- return the loaded table
+end
+
+-- load the info from the table
+savedInfo = infoLoad( "info" )
+
+-- check if the file exists
+if savedInfo == NIL then
+	-- if so, print no data
+	print("No Data")
+else 
+	print("Data Exist")
+	-- this is just to check in the console if it contains the right data
+	print(savedInfo["1"]["C"])
+
+end
+
 -- Go to the intro screen
 composer.gotoScene("scenes.intro" )
- 
--- Go to the menu screen
---composer.gotoScene("scenes.mainMenu")
-
--- Go to the Update screen
---composer.gotoScene("scenes.update")
---notification
---doesn't exist!
-
--- Go to the Warnings screen
---composer.gotoScene("scenes.warnings") 
-
--- Go to the Report Incident screen
---composer.gotoScene("scenes.reportIncident")
-
--- Go to the Search Bar screen
---composer.gotoScene("scenes.searchBar")
---doesn't exist!
-
--- Go to the Plan My Route screen
---composer.gotoScene("scenes.planMyRoute")
-
--- Go to the Tips and Tricks screen
---composer.gotoScene("scenes.tipsAndTricks")
-
--- Go to the Interesting Facts screen
---composer.gotoScene("scenes.interestingFacts")
-
--- Go to the Laws and Bylaws screen
---composer.gotoScene("scenes.lawsAndBylaws")
-
--- Go to the Rules and regulations screen
---composer.gotoScene("scenes.rulesAndRegulations")
---link to permissions
-
--- Go to the GPS screen
---composer.gotoScene("scenes.gps")
-
--- Go to the SOS button screen
---composer.gotoScene("scenes.sos")
-
--- Go to the Exit screen
---composer.gotoScene("scenes.exit")
-------------------------------------------------------------------------------------------

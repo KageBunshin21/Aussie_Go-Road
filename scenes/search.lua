@@ -15,68 +15,85 @@ local scene = composer.newScene()
 -- -----------------------------------------------------------------------------------
  
 local function goBack()
-    composer.gotoScene( "scenes.intro" )
+	composer.gotoScene( "scenes.intro" )
 end
 
 local function goKarijini()
-    composer.gotoScene( "scenes.intro" )
+	_G.selectedLocation = 1
+    composer.gotoScene( "scenes.planRouteScene" )    
 end
 
 local function goKalgoorlie()
-    composer.gotoScene( "scenes.intro" )
+	_G.selectedLocation = 2 
+    composer.gotoScene( "scenes.planRouteScene" )
 end
 
 local function goBarossa()
-    composer.gotoScene( "scenes.intro" )
+	_G.selectedLocation = 3
+    composer.gotoScene( "scenes.planRouteScene" )    
 end
 
 local function goAnangu()
-    composer.gotoScene( "scenes.intro" )
+	_G.selectedLocation = 4
+    composer.gotoScene( "scenes.planRouteScene" )
 end
 
 local function goOceanRoad()
-    composer.gotoScene( "scenes.intro" )
+	_G.selectedLocation = 5
+    composer.gotoScene( "scenes.planRouteScene" )
 end
 
 local function goGrampians()
-    composer.gotoScene( "scenes.intro" )
+	_G.selectedLocation = 6
+    composer.gotoScene( "scenes.planRouteScene" )
 end
 
 local function goKakadu()
-    composer.gotoScene( "scenes.intro" )
+	_G.selectedLocation = 7
+    composer.gotoScene( "scenes.planRouteScene" )
 end
 
 local function goUluru()
-    composer.gotoScene( "scenes.intro" )
+	_G.selectedLocation = 8
+    composer.gotoScene( "scenes.planRouteScene" )
 end
 
 local function goBarrierReef()
-    composer.gotoScene( "scenes.intro" )
+	_G.selectedLocation = 9
+    composer.gotoScene( "scenes.planRouteScene" )
 end
 
 local function goKuranda()
-    composer.gotoScene( "scenes.intro" )
+	_G.selectedLocation = 10
+    composer.gotoScene( "scenes.planRouteScene" )
 end
 
 local function goSydney()
-    composer.gotoScene( "scenes.intro" )
+	_G.selectedLocation = 11 
+    composer.gotoScene( "scenes.planRouteScene" )
 end
 
 local function goBlueMountains()
-    composer.gotoScene( "scenes.intro" )
+	_G.selectedLocation = 12
+    composer.gotoScene( "scenes.planRouteScene" )
 end
 
 local function goCanberra()
-    composer.gotoScene( "scenes.intro" )
+	_G.selectedLocation = 13
+    composer.gotoScene( "scenes.planRouteScene" )
 end
 
 local function goCradleMountain()
-    composer.gotoScene( "scenes.intro" )
+	_G.selectedLocation = 14
+    composer.gotoScene( "scenes.planRouteScene" )
 end
 
 local function goFreycinet()
-    composer.gotoScene( "scenes.intro" )
+	_G.selectedLocation = 15
+    composer.gotoScene( "scenes.planRouteScene" )
 end
+
+
 
 -- -------------------------------------------------------------------------------------
 -- Scene event functions
@@ -103,128 +120,82 @@ function scene:create( event )
     local backButton = display.newImageRect( sceneGroup, "assets/back.png", 150, 60 )
     backButton.x = display.contentCenterX
     backButton.y = 468
-
     backButton:addEventListener( "tap", goBack)
 
     --create buttons to send user to different search pages
-    local karijiniButton = display.newRect(0,0,150,30)
-	karijiniButton:setFillColor(255,0,0)
+    local karijiniButton = display.newImageRect( sceneGroup, "assets/karijiniButton.png", 160, 43 )
 	karijiniButton.x = 78
 	karijiniButton.y = 104
-	karijiniButton.alpha = 0
-	karijiniButton.isHitTestable = true
 	karijiniButton:addEventListener("tap", goKarijini)
 
-	local kalgoorlieButton = display.newRect(0,0,150,30)
-	kalgoorlieButton:setFillColor(255,0,0)
+	local kalgoorlieButton = display.newImageRect( sceneGroup, "assets/kalgoorlieButton.png", 160, 43 )
 	kalgoorlieButton.x = 240
 	kalgoorlieButton.y = 104
-	kalgoorlieButton.alpha = 0
-	kalgoorlieButton.isHitTestable = true
 	kalgoorlieButton:addEventListener("tap", goKalgoorlie)
 
-	local barossaButton = display.newRect(0,0,150,30)
-	barossaButton:setFillColor(255,0,0)
+	local barossaButton = display.newImageRect( sceneGroup, "assets/barossaButton.png", 160, 43 )
 	barossaButton.x = 78
 	barossaButton.y = 147
-	barossaButton.alpha = 0
-	barossaButton.isHitTestable = true
 	barossaButton:addEventListener("tap", goBarossa)
 
-	local ananguButton = display.newRect(0,0,150,30)
-	ananguButton:setFillColor(255,0,0)
+	local ananguButton = display.newImageRect( sceneGroup, "assets/ananguButton.png", 160, 43 )
 	ananguButton.x = 240
 	ananguButton.y = 147
-	ananguButton.alpha = 0
-	ananguButton.isHitTestable = true
 	ananguButton:addEventListener("tap", goAnangu)
 
-	local oceanRoadButton = display.newRect(0,0,150,30)
-	oceanRoadButton:setFillColor(255,0,0)
+	local oceanRoadButton = display.newImageRect( sceneGroup, "assets/oceanRoadButton.png", 160, 43 )
 	oceanRoadButton.x = 78
 	oceanRoadButton.y = 190
-	oceanRoadButton.alpha = 0
-	oceanRoadButton.isHitTestable = true
 	oceanRoadButton:addEventListener("tap", goOceanRoad)
 
-	local grampiansButton = display.newRect(0,0,150,30)
-	grampiansButton:setFillColor(255,0,0)
+	local grampiansButton = display.newImageRect( sceneGroup, "assets/grampiansButton.png", 160, 43 )
 	grampiansButton.x = 240
 	grampiansButton.y = 190
-	grampiansButton.alpha = 0
-	grampiansButton.isHitTestable = true
 	grampiansButton:addEventListener("tap", goGrampians)
 
-	local kakaduButton = display.newRect(0,0,150,30)
-	kakaduButton:setFillColor(255,0,0)
+	local kakaduButton = display.newImageRect( sceneGroup, "assets/kakaduButton.png", 160, 43 )
 	kakaduButton.x = 78
 	kakaduButton.y = 233
-	kakaduButton.alpha = 0
-	kakaduButton.isHitTestable = true
 	kakaduButton:addEventListener("tap", goKakadu)
 
-	local uluruButton = display.newRect(0,0,150,30)
-	uluruButton:setFillColor(255,0,0)
+	local uluruButton = display.newImageRect( sceneGroup, "assets/uluruButton.png", 160, 43 )
 	uluruButton.x = 240
 	uluruButton.y = 233
-	uluruButton.alpha = 0
-	uluruButton.isHitTestable = true
 	uluruButton:addEventListener("tap", goUluru)
 
-	local barrierReefButton = display.newRect(0,0,150,30)
-	barrierReefButton:setFillColor(255,0,0)
+	local barrierReefButton = display.newImageRect( sceneGroup, "assets/barrierReefButton.png", 160, 43 )
 	barrierReefButton.x = 78
 	barrierReefButton.y = 276
-	barrierReefButton.alpha = 0
-	barrierReefButton.isHitTestable = true
 	barrierReefButton:addEventListener("tap", goBarrierReef)
 
-	local kurandaButton = display.newRect(0,0,150,30)
-	kurandaButton:setFillColor(255,0,0)
+	local kurandaButton = display.newImageRect( sceneGroup, "assets/kurandaButton.png", 160, 43 )
 	kurandaButton.x = 240
 	kurandaButton.y = 276
-	kurandaButton.alpha = 0
-	kurandaButton.isHitTestable = true
 	kurandaButton:addEventListener("tap", goKuranda)
 
-	local sydneyButton = display.newRect(0,0,150,30)
-	sydneyButton:setFillColor(255,0,0)
+	local sydneyButton = display.newImageRect( sceneGroup, "assets/sydneyButton.png", 160, 43 )
 	sydneyButton.x = 78
 	sydneyButton.y = 319
-	sydneyButton.alpha = 0
-	sydneyButton.isHitTestable = true
 	sydneyButton:addEventListener("tap", goSydney)
 
-	local blueMountainsButton = display.newRect(0,0,150,30)
-	blueMountainsButton:setFillColor(255,0,0)
+	local blueMountainsButton = display.newImageRect( sceneGroup, "assets/blueMountainsButton.png", 160, 43 )
 	blueMountainsButton.x = 240
 	blueMountainsButton.y = 319
-	blueMountainsButton.alpha = 0
-	blueMountainsButton.isHitTestable = true
 	blueMountainsButton:addEventListener("tap", goBlueMountains)
 
-	local canberraButton = display.newRect(0,0,150,30)
-	canberraButton:setFillColor(255,0,0)
+	local canberraButton = display.newImageRect( sceneGroup, "assets/canberraButton.png", 160, 43 )
 	canberraButton.x = 78
 	canberraButton.y = 362
-	canberraButton.alpha = 0
-	canberraButton.isHitTestable = true
 	canberraButton:addEventListener("tap", goCanberra)
 
-	local cradleMountainButton = display.newRect(0,0,150,30)
-	cradleMountainButton:setFillColor(255,0,0)
+	local cradleMountainButton = display.newImageRect( sceneGroup, "assets/cradleMountainButton.png", 160, 43 )
 	cradleMountainButton.x = 240
 	cradleMountainButton.y = 362
-	cradleMountainButton.alpha = 0
-	cradleMountainButton.isHitTestable = true
 	cradleMountainButton:addEventListener("tap", goCradleMountain)
 
-	local freycinetButton = display.newRect(0,0,150,30)
-	freycinetButton:setFillColor(255,0,0)
+	local freycinetButton = display.newImageRect( sceneGroup, "assets/freycinetButton.png", 160, 43 )
 	freycinetButton.x = display.contentCenterX
 	freycinetButton.y = 405
-	freycinetButton.alpha = 0
-	freycinetButton.isHitTestable = true
 	freycinetButton:addEventListener("tap", goFreycinet)
 end
  
