@@ -15,9 +15,10 @@ regulations.
 ---------------------------------------------------------------------------------------------------
 2. Installation
 ---------------------------------------------------------------------------------------------------
-Step 1: Download the Aussie Go-Road app from the Google Play Store.
-Step 2: Install the Aussie Go-Road app to your device.
-Step 3: Open the Aussie Go-Road app.
+Step 1: Transfer the Aussie Go-Road .apk file to any Android device.
+Step 2: Inside your Android device's file manager, click on the .apk file, and install it.
+Step 3: (You may be prompted to allow installations from unknown sources; click yes).
+Step 4: Open the Aussie Go-Road app.
 
 ---------------------------------------------------------------------------------------------------
 3. App Requirements
