@@ -107,8 +107,8 @@ function scene:create( event )
 -- -----------------------------------------------------------------------------------
 	--Storing and displaying various different things based on what the user selected
 	
-	local urlLaws
-    local urlRegulations
+	urlLaws = ""
+    urlRegulations = ""
     local subTitle
     local lawsRegTextObject
 	local lawsTextObject 

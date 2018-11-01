@@ -109,7 +109,7 @@ scrollView = widget.newScrollView ({
 -- -----------------------------------------------------------------------------------
 -- tips text and links
 -- -----------------------------------------------------------------------------------
-	local url
+	url = ""
 	local subTitle
 	local tipsTextObject
 	local linkText
