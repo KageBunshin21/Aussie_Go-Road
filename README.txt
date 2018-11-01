@@ -35,10 +35,10 @@ The Aussie Go-Road app has many amazing features, which will be explained in-dep
 4.1. Searching for a destination & planning your route
 ---------------------------------------------------------------------------------------------------
 Step 1. From the main screen, click on the search button in the top left corner of the screen.
-Step 2. Once the search bar appears, search for a destination.
-Step 3. If the destintation is found, it will appear in the search results.
-Step 4. Click on the destination to be taken to the plan my route screen for that destination.
-Step 5. View various facts, laws, and information about the location in order to plan your route.
+Step 2. Once the search bar appears, click on a destination to be taken to the plan my route 
+screen for that destination.
+Step 3. Click on "Quick Tips", "Facts", or "Laws and Regulations" to learn more about your
+destination.
 
 ---------------------------------------------------------------------------------------------------
 4.2. Reporting an incident
@@ -57,8 +57,9 @@ Step 2. View all active warnings & cautions.
 4.4. Viewing general tips, tricks, and suggestions for traveling around Australia
 ---------------------------------------------------------------------------------------------------
 Step 1. From the main screen, click on the menu button in the bottom middle part of the screen.
-Step 2. From the menu, click on the "tips & suggestions" button.
-Step 3. Read all about the various tips, tricks, and suggestions for traveling around Australia!
+Step 2. From the menu, click on the "tips & tricks" button.
+Step 3. Click on "General Tips", "Safety Tips", or "Security Tips" to learn all about travelling
+in Australia!
 
 ---------------------------------------------------------------------------------------------------
 4.5. Calling emergency services (SOS)
