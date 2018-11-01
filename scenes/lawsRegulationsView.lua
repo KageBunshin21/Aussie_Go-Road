@@ -2,10 +2,10 @@
 --
 -- 	lawsRegulationsView.lua
 --
--- 	laws of the state and regulations about the target location 
+-- 	laws of the state and regulations about the target location
 --
 --  Author: Michael Ibesa and Ricardo Felix Costa
---  Date: October 18, 2018 
+--  Date: October 18, 2018
 -----------------------------------------------------------------------------------------
 
 local composer = require( "composer" )
@@ -30,7 +30,7 @@ local Y = display.contentCenterY
 -- -----------------------------------------------------------------------------------
 -- functions
 -- -----------------------------------------------------------------------------------
--- a function to open the links 
+-- a function to open the links
 local function viewWebPage( event )
     system.openURL(urlLaws)
 end
@@ -57,14 +57,14 @@ local function scrollListener( event )
 		elseif (event.direction == "down") then print("Reached bottom limit")
 		end
 	end
-	
+
 	return true
 end
 
 -- function to go back to plan my route scene
 local function goToPlanRouteScene()
 	composer.removeScene( "scenes.lawsRegulationsView" )
-	composer.gotoScene( "scenes.planRouteScene", "crossFade", 1000 )    
+	composer.gotoScene( "scenes.planRouteScene", "crossFade", 500 )    
     return true
 end
 
@@ -77,7 +77,7 @@ function scene:create( event )
 
     local sceneGroup = self.view
     -- Code here runs when the scene is first created but has not yet appeared on screen
-	
+
 	-- Create a scrollView
 	local scrollView = widget.newScrollView ({
 	  left = 0,
@@ -91,32 +91,32 @@ function scene:create( event )
 	  listener = scrollListener,
 	  backgroundColor = { 0, 0, 0}
 	})
-	
+
 	-- set up tips as background image
 	--[[local background = display.newImageRect( "/assets/tips.png", display.actualContentWidth, display.actualContentHeight )
     background.x = display.contentCenterX
     scrollView:insert (background)
 	sceneGroup:insert(scrollView)]]--
-	
+
 	-- Display title "Plan My Route"
-	local title = display.newText("Laws and Regulations", display.contentCenterX , 10 , display.contentWidth * .8, 0, titleFontStyle, 28)
-	
-	
+	local title = display.newText("Laws & Regulations", display.contentCenterX , 10 , display.contentWidth * .8, 0, titleFontStyle, 20)
+
+
 -- -----------------------------------------------------------------------------------
--- text object for the information and links of laws and regulations 
+-- text object for the information and links of laws and regulations
 -- -----------------------------------------------------------------------------------
 	--Storing and displaying various different things based on what the user selected
-	
+
 	urlLaws = ""
     urlRegulations = ""
     local subTitle
     local lawsRegTextObject
-	local lawsTextObject 
+	local lawsTextObject
 	local lawsLinkText
 	local regulationsTextObject
 	local regulationsLinkText
 
-	if _G.selectedLocation == 1 then		
+	if _G.selectedLocation == 1 then
         urlLaws = savedInfo["1"]["E"]
         urlRegulations = savedInfo["1"]["D"]
         subTitle = display.newText(savedInfo["1"]["B"], display.contentCenterX, 50, subTitleFontStyle, subTitleFontSize)
@@ -254,16 +254,16 @@ function scene:create( event )
 	end
 
 	lawsRegTextObject.x = display.contentCenterX
-    lawsRegTextObject.anchorY = 0	
+    lawsRegTextObject.anchorY = 0
 	lawsTextObject.x = display.contentCenterX
-    lawsTextObject.anchorY = 0	
+    lawsTextObject.anchorY = 0
 	lawsLinkText.x = display.contentCenterX
-    lawsLinkText.anchorY = 0	    
+    lawsLinkText.anchorY = 0
 	regulationsTextObject.x = display.contentCenterX
-    regulationsTextObject.anchorY = 0	
+    regulationsTextObject.anchorY = 0
 	regulationsLinkText.x = display.contentCenterX
-    regulationsLinkText.anchorY = 0	    
-	
+    regulationsLinkText.anchorY = 0
+
 	scrollView:insert(lawsRegTextObject)
 	scrollView:insert(lawsTextObject)
 	scrollView:insert(lawsLinkText)
@@ -280,17 +280,17 @@ function scene:create( event )
 	-- inserting scrollView to sceneGroup
 	sceneGroup:insert(title)
 	sceneGroup:insert(subTitle)
-	sceneGroup:insert(scrollView)	
+	sceneGroup:insert(scrollView)
 
 	--Event Listeners
 	lawsLinkText:addEventListener( "tap", viewWebPage)
 	regulationsLinkText:addEventListener( "tap", viewWebPages)
 	backButton:addEventListener( "tap", goToPlanRouteScene)
-	
+
 -- -----------------------------------------------------------------------------------
-	
-	
-	
+
+
+
 end
 -- show()
 function scene:show( event )

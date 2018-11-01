@@ -2,10 +2,10 @@
 --
 -- tipsSuggestionsView.lua
 --
--- 	tips and suggestions on target location 
+-- 	tips and suggestions on target location
 --
 --  Author: Michael Ibesa and Ricardo Felix Costa
---  Date: October 15, 2018 
+--  Date: October 15, 2018
 -----------------------------------------------------------------------------------------
 
 local composer = require( "composer" )
@@ -31,7 +31,7 @@ local Y = display.contentCenterY
 -- -----------------------------------------------------------------------------------
 -- functions
 -- -----------------------------------------------------------------------------------
--- a function to open the links 
+-- a function to open the links
 local function viewWebPage(event)
 	system.openURL( url )
 end
@@ -54,14 +54,14 @@ local function scrollListener( event )
 		elseif (event.direction == "down") then print("Reached bottom limit")
 		end
 	end
-	
+
 	return true
 end
 
 -- function to go back to plan my route scene
 local function goToPlanRouteScene()
 	composer.removeScene( "scenes.tipsSuggestionsView" )
-	composer.gotoScene( "scenes.planRouteScene", "crossFade", 1000 )    
+	composer.gotoScene( "scenes.planRouteScene", "crossFade", 500 )    
     return true
 end
 
@@ -74,7 +74,7 @@ function scene:create( event )
 
     local sceneGroup = self.view
     -- Code here runs when the scene is first created but has not yet appeared on screen
-	
+
 -- -----------------------------------------------------------------------------------
 -- widgets
 -- -----------------------------------------------------------------------------------
@@ -102,10 +102,10 @@ scrollView = widget.newScrollView ({
     background.x = display.contentCenterX
     scrollView:insert (background)
 	sceneGroup:insert(scrollView)]]--
-	
+
 	-- Display title "Plan My Route"
-	local title = display.newText("Tips & Suggestions", display.contentCenterX , 10 , display.contentWidth * .8, 0, titleFontStyle, titleFontSize*.8)
-	
+	local title = display.newText("Tips & Suggestions", display.contentCenterX , 10 , display.contentWidth * .8, 0, titleFontStyle, titleFontSize*.5)
+
 -- -----------------------------------------------------------------------------------
 -- tips text and links
 -- -----------------------------------------------------------------------------------
@@ -120,107 +120,107 @@ scrollView = widget.newScrollView ({
 	if _G.selectedLocation == 1 then
 		url = savedInfo["1"]["H"]
 		subTitle = display.newText(savedInfo["1"]["B"], display.contentCenterX, 50, subTitleFontStyle, subTitleFontSize)
-		tipsTextObject = display.newText( savedInfo["1"]["G"], 0 , 10 , display.contentWidth * .8, 0, normalfontStyle , normalFontSize) 
+		tipsTextObject = display.newText( savedInfo["1"]["G"], 0 , 10 , display.contentWidth * .8, 0, normalfontStyle , normalFontSize)
     	linkText = display.newText( "Tap here for more information.", 0 , tipsTextObject.height+50 , display.contentWidth * .8, 0, buttonFontStyle , normalFontSize)
 	elseif _G.selectedLocation == 2 then
 		url = savedInfo["2"]["H"]
 		subTitle = display.newText(savedInfo["2"]["B"], display.contentCenterX, 50, subTitleFontStyle, subTitleFontSize)
-		tipsTextObject = display.newText( savedInfo["2"]["G"], 0 , 10 , display.contentWidth * .8, 0, normalfontStyle , normalFontSize) 
+		tipsTextObject = display.newText( savedInfo["2"]["G"], 0 , 10 , display.contentWidth * .8, 0, normalfontStyle , normalFontSize)
     	linkText = display.newText( "Tap here for more information.", 0 , tipsTextObject.height+50 , display.contentWidth * .8, 0, buttonFontStyle , normalFontSize)
 	elseif _G.selectedLocation == 3 then
 		url = savedInfo["3"]["H"]
 		subTitle = display.newText(savedInfo["3"]["B"], display.contentCenterX, 50, subTitleFontStyle, subTitleFontSize)
-		tipsTextObject = display.newText( savedInfo["3"]["G"], 0 , 10 , display.contentWidth * .8, 0, normalfontStyle , normalFontSize) 
+		tipsTextObject = display.newText( savedInfo["3"]["G"], 0 , 10 , display.contentWidth * .8, 0, normalfontStyle , normalFontSize)
     	linkText = display.newText( "Tap here for more information.", 0 , tipsTextObject.height+50 , display.contentWidth * .8, 0, buttonFontStyle , normalFontSize)
 	elseif _G.selectedLocation == 4 then
 		url = savedInfo["4"]["H"]
 		subTitle = display.newText(savedInfo["4"]["B"], display.contentCenterX, 50, subTitleFontStyle, subTitleFontSize)
-		tipsTextObject = display.newText( savedInfo["4"]["G"], 0 , 10 , display.contentWidth * .8, 0, normalfontStyle , normalFontSize) 
+		tipsTextObject = display.newText( savedInfo["4"]["G"], 0 , 10 , display.contentWidth * .8, 0, normalfontStyle , normalFontSize)
     	linkText = display.newText( "Tap here for more information.", 0 , tipsTextObject.height+50 , display.contentWidth * .8, 0, buttonFontStyle , normalFontSize)
     elseif _G.selectedLocation == 5 then
 		url = savedInfo["5"]["H"]
 		subTitle = display.newText(savedInfo["5"]["B"], display.contentCenterX, 50, subTitleFontStyle, subTitleFontSize)
-		tipsTextObject = display.newText( savedInfo["5"]["G"], 0 , 10 , display.contentWidth * .8, 0, normalfontStyle , normalFontSize) 
+		tipsTextObject = display.newText( savedInfo["5"]["G"], 0 , 10 , display.contentWidth * .8, 0, normalfontStyle , normalFontSize)
     	linkText = display.newText( "Tap here for more information.", 0 , tipsTextObject.height+50 , display.contentWidth * .8, 0, buttonFontStyle , normalFontSize)
 	elseif _G.selectedLocation == 6 then
 		url = savedInfo["6"]["H"]
 		subTitle = display.newText(savedInfo["6"]["B"], display.contentCenterX, 50, subTitleFontStyle, subTitleFontSize)
-		tipsTextObject = display.newText( savedInfo["6"]["G"], 0 , 10 , display.contentWidth * .8, 0, normalfontStyle , normalFontSize) 
+		tipsTextObject = display.newText( savedInfo["6"]["G"], 0 , 10 , display.contentWidth * .8, 0, normalfontStyle , normalFontSize)
     	linkText = display.newText( "Tap here for more information.", 0 , tipsTextObject.height+50 , display.contentWidth * .8, 0, buttonFontStyle , normalFontSize)
 	elseif _G.selectedLocation == 7 then
 		url = savedInfo["7"]["H"]
 		subTitle = display.newText(savedInfo["7"]["B"], display.contentCenterX, 50, subTitleFontStyle, subTitleFontSize)
-		tipsTextObject = display.newText( savedInfo["7"]["G"], 0 , 10 , display.contentWidth * .8, 0, normalfontStyle , normalFontSize) 
+		tipsTextObject = display.newText( savedInfo["7"]["G"], 0 , 10 , display.contentWidth * .8, 0, normalfontStyle , normalFontSize)
     	linkText = display.newText( "Tap here for more information.", 0 , tipsTextObject.height+50 , display.contentWidth * .8, 0, buttonFontStyle , normalFontSize)
 	elseif _G.selectedLocation == 8 then
 		url = savedInfo["8"]["H"]
 		subTitle = display.newText(savedInfo["8"]["B"], display.contentCenterX, 50, subTitleFontStyle, subTitleFontSize)
-		tipsTextObject = display.newText( savedInfo["8"]["G"], 0 , 10 , display.contentWidth * .8, 0, normalfontStyle , normalFontSize) 
+		tipsTextObject = display.newText( savedInfo["8"]["G"], 0 , 10 , display.contentWidth * .8, 0, normalfontStyle , normalFontSize)
     	linkText = display.newText( "Tap here for more information.", 0 , tipsTextObject.height+50 , display.contentWidth * .8, 0, buttonFontStyle , normalFontSize)
     elseif _G.selectedLocation == 9 then
 		url = savedInfo["9"]["H"]
 		subTitle = display.newText(savedInfo["9"]["B"], display.contentCenterX, 50, subTitleFontStyle, subTitleFontSize)
-		tipsTextObject = display.newText( savedInfo["9"]["G"], 0 , 10 , display.contentWidth * .8, 0, normalfontStyle , normalFontSize) 
+		tipsTextObject = display.newText( savedInfo["9"]["G"], 0 , 10 , display.contentWidth * .8, 0, normalfontStyle , normalFontSize)
     	linkText = display.newText( "Tap here for more information.", 0 , tipsTextObject.height+50 , display.contentWidth * .8, 0, buttonFontStyle , normalFontSize)
 	elseif _G.selectedLocation == 10 then
 		url = savedInfo["10"]["H"]
 		subTitle = display.newText(savedInfo["10"]["B"], display.contentCenterX, 50, subTitleFontStyle, subTitleFontSize)
-		tipsTextObject = display.newText( savedInfo["10"]["G"], 0 , 10 , display.contentWidth * .8, 0, normalfontStyle , normalFontSize) 
+		tipsTextObject = display.newText( savedInfo["10"]["G"], 0 , 10 , display.contentWidth * .8, 0, normalfontStyle , normalFontSize)
     	linkText = display.newText( "Tap here for more information.", 0 , tipsTextObject.height+50 , display.contentWidth * .8, 0, buttonFontStyle , normalFontSize)
     elseif _G.selectedLocation == 11 then
 		url = savedInfo["11"]["H"]
 		subTitle = display.newText(savedInfo["11"]["B"], display.contentCenterX, 50, subTitleFontStyle, subTitleFontSize)
-		tipsTextObject = display.newText( savedInfo["11"]["G"], 0 , 10 , display.contentWidth * .8, 0, normalfontStyle , normalFontSize) 
+		tipsTextObject = display.newText( savedInfo["11"]["G"], 0 , 10 , display.contentWidth * .8, 0, normalfontStyle , normalFontSize)
     	linkText = display.newText( "Tap here for more information.", 0 , tipsTextObject.height+50 , display.contentWidth * .8, 0, buttonFontStyle , normalFontSize)
 	elseif _G.selectedLocation == 12 then
 		url = savedInfo["12"]["H"]
 		subTitle = display.newText(savedInfo["12"]["B"], display.contentCenterX, 50, subTitleFontStyle, subTitleFontSize)
-		tipsTextObject = display.newText( savedInfo["12"]["G"], 0 , 10 , display.contentWidth * .8, 0, normalfontStyle , normalFontSize) 
+		tipsTextObject = display.newText( savedInfo["12"]["G"], 0 , 10 , display.contentWidth * .8, 0, normalfontStyle , normalFontSize)
     	linkText = display.newText( "Tap here for more information.", 0 , tipsTextObject.height+50 , display.contentWidth * .8, 0, buttonFontStyle , normalFontSize)
 	elseif _G.selectedLocation == 13 then
 		url = savedInfo["13"]["H"]
 		subTitle = display.newText(savedInfo["13"]["B"], display.contentCenterX, 50, subTitleFontStyle, subTitleFontSize)
-		tipsTextObject = display.newText( savedInfo["13"]["G"], 0 , 10 , display.contentWidth * .8, 0, normalfontStyle , normalFontSize) 
+		tipsTextObject = display.newText( savedInfo["13"]["G"], 0 , 10 , display.contentWidth * .8, 0, normalfontStyle , normalFontSize)
     	linkText = display.newText( "Tap here for more information.", 0 , tipsTextObject.height+50 , display.contentWidth * .8, 0, buttonFontStyle , normalFontSize)
 	elseif _G.selectedLocation == 14 then
 		url = savedInfo["14"]["H"]
 		subTitle = display.newText(savedInfo["14"]["B"], display.contentCenterX, 50, subTitleFontStyle, subTitleFontSize)
-		tipsTextObject = display.newText( savedInfo["14"]["G"], 0 , 10 , display.contentWidth * .8, 0, normalfontStyle , normalFontSize) 
+		tipsTextObject = display.newText( savedInfo["14"]["G"], 0 , 10 , display.contentWidth * .8, 0, normalfontStyle , normalFontSize)
     	linkText = display.newText( "Tap here for more information.", 0 , tipsTextObject.height+50 , display.contentWidth * .8, 0, buttonFontStyle , normalFontSize)
     elseif _G.selectedLocation == 15 then
 		url = savedInfo["15"]["H"]
 		subTitle = display.newText(savedInfo["15"]["B"], display.contentCenterX, 50, subTitleFontStyle, subTitleFontSize)
-		tipsTextObject = display.newText( savedInfo["15"]["G"], 0 , 10 , display.contentWidth * .8, 0, normalfontStyle , normalFontSize) 
-    	linkText = display.newText( "Tap here for more information.", 0 , tipsTextObject.height+50 , display.contentWidth * .8, 0, buttonFontStyle , normalFontSize)	
-	end   
+		tipsTextObject = display.newText( savedInfo["15"]["G"], 0 , 10 , display.contentWidth * .8, 0, normalfontStyle , normalFontSize)
+    	linkText = display.newText( "Tap here for more information.", 0 , tipsTextObject.height+50 , display.contentWidth * .8, 0, buttonFontStyle , normalFontSize)
+	end
 
 	tipsTextObject.x = display.contentCenterX
 	tipsTextObject.anchorY = 0
 	linkText.x = display.contentCenterX
-	linkText.anchorY = 0  
-    
-	
+	linkText.anchorY = 0
+
+
 -- -----------------------------------------------------------------------------------
-	
-	
+
+
 	-- a button that links back to the plan my route scene
 	local backButton = display.newImageRect( sceneGroup, "assets/back.png", 150, 60 )
     backButton.x = display.contentCenterX+3
     backButton.y = 480
 
 	-- inserting objects to scrollview
-	scrollView:insert(tipsTextObject)	  	
+	scrollView:insert(tipsTextObject)
 	scrollView:insert(linkText)
-	
+
 	-- inserting scrollView to sceneGroup
-	sceneGroup:insert(title)	
+	sceneGroup:insert(title)
 	sceneGroup:insert(subTitle)
 	sceneGroup:insert(scrollView)
-	
+
 	-- event listeners
 	linkText:addEventListener( "tap", viewWebPage)
 	backButton:addEventListener( "tap", goToPlanRouteScene)
-	
+
 end
 -- show()
 function scene:show( event )

@@ -15,23 +15,23 @@ local scene = composer.newScene()
 -- -----------------------------------------------------------------------------------
 
 local function gotoReportIncidents()
-    composer.gotoScene( "scenes.reportIncidents" )
+    composer.gotoScene( "scenes.reportIncidents", "crossFade", 500 )
 end
 
 local function gotoPlanMyRoute()
-    composer.gotoScene( "scenes.tipsAndTricks" )
+    composer.gotoScene( "scenes.tipsAndTricks", "crossFade", 500 )
 end
 
 local function gotoAboriginalPermissions()
-    composer.gotoScene( "scenes.aboriginalPermissions" )
+    composer.gotoScene( "scenes.aboriginalPermissions", "crossFade", 500 )
 end
 
 local function gotoAbout()
-    composer.gotoScene( "scenes.about" )
+    composer.gotoScene( "scenes.about", "crossFade", 500 )
 end
 
 local function gotoIntro()
-    composer.gotoScene( "scenes.intro" )
+    composer.gotoScene( "scenes.intro", "crossFade", 500 )
 end
 
 

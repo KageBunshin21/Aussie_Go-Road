@@ -55,7 +55,7 @@ function scene:create( event )
         sceneGroup:insert (linkButton)
 
     local function goBack()
-    composer.gotoScene( "scenes.mainMenu" )
+    composer.gotoScene( "scenes.mainMenu", "crossFade", 500  )
     end
 
     local backButton = display.newImageRect( sceneGroup, "assets/back.png", 150, 60 )
